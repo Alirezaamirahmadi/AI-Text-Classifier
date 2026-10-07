@@ -1,0 +1,87 @@
+{
+  "model_version": "pytorch_v1",
+  "model_type": "Embedding + BiLSTM + Dropout + Linear",
+  "dataset": "UCI SMS Spam Collection",
+  "dataset_rows_raw": 5574,
+  "dataset_rows_valid": 5171,
+  "split": {
+    "train": 3619,
+    "validation": 776,
+    "test": 776
+  },
+  "vocab_size": 7147,
+  "label_mapping": {
+    "ham": 0,
+    "spam": 1
+  },
+  "device": "cpu",
+  "best_epoch": 7,
+  "best_validation_f1": 0.9137055837563451,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.6123336386898006,
+      "train_f1": 0.40025990903183883,
+      "validation_loss": 0.5248724302065741,
+      "validation_f1": 0.4965034965034965
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.38807292471573673,
+      "train_f1": 0.5942249240121581,
+      "validation_loss": 0.3112603149463221,
+      "validation_f1": 0.5660377358490566
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.20246520042460608,
+      "train_f1": 0.7441860465116279,
+      "validation_loss": 0.2103379672470013,
+      "validation_f1": 0.8075117370892019
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.11998684425962074,
+      "train_f1": 0.8545994065281899,
+      "validation_loss": 0.1800066056162042,
+      "validation_f1": 0.8712871287128713
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.08821225651359979,
+      "train_f1": 0.9017223910840932,
+      "validation_loss": 0.1702321695869539,
+      "validation_f1": 0.8768472906403941
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.05977155055215623,
+      "train_f1": 0.9343065693430657,
+      "validation_loss": 0.15929517838095805,
+      "validation_f1": 0.8910891089108911
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.040968512620598814,
+      "train_f1": 0.9607635206786851,
+      "validation_loss": 0.15820996551030345,
+      "validation_f1": 0.9137055837563451
+    }
+  ],
+  "test": {
+    "accuracy": 0.9755154639175257,
+    "precision": 0.8910891089108911,
+    "recall": 0.9183673469387755,
+    "f1": 0.9045226130653267,
+    "confusion_matrix": [
+      [
+        667,
+        11
+      ],
+      [
+        8,
+        90
+      ]
+    ]
+  }
+}

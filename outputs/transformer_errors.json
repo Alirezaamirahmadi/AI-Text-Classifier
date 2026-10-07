@@ -1,0 +1,44 @@
+[
+  {
+    "text": "New Tones This week include: 1)McFly-All Ab.., 2) Sara Jorge-Shock.. 3) Will Smith-Switch.. To order follow instructions on next message",
+    "actual_label": "spam",
+    "predicted_label": "ham",
+    "confidence": 0.9955
+  },
+  {
+    "text": "Would you like to see my XXX pics they are so hot they were nearly banned in the uk!",
+    "actual_label": "spam",
+    "predicted_label": "ham",
+    "confidence": 0.985
+  },
+  {
+    "text": "Burger King - Wanna play footy at a top stadium? Get 2 Burger King before 1st Sept and go Large or Super with Coca-Cola and walk out a winner",
+    "actual_label": "spam",
+    "predicted_label": "ham",
+    "confidence": 0.9837
+  },
+  {
+    "text": "RCT' THNQ Adrian for U text. Rgds Vatian",
+    "actual_label": "spam",
+    "predicted_label": "ham",
+    "confidence": 0.9989
+  },
+  {
+    "text": "Latest News! Police station toilet stolen, cops have nothing to go on!",
+    "actual_label": "spam",
+    "predicted_label": "ham",
+    "confidence": 0.9887
+  },
+  {
+    "text": "Check Out Choose Your Babe Videos @ sms.shsex.netUN fgkslpoPW fgkslpo",
+    "actual_label": "spam",
+    "predicted_label": "ham",
+    "confidence": 0.9435
+  },
+  {
+    "text": "Babe: U want me dont u baby! Im nasty and have a thing 4 filthyguys. Fancy a rude time with a sexy bitch. How about we go slo n hard! Txt XXX SLO(4msgs)",
+    "actual_label": "spam",
+    "predicted_label": "ham",
+    "confidence": 0.9797
+  }
+]

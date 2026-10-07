@@ -1,0 +1,34 @@
+{
+  "evaluation_split": {
+    "train": 3619,
+    "validation": 776,
+    "test": 776
+  },
+  "models": {
+    "tfidf_logistic_regression": {
+      "accuracy": 0.979381443298969,
+      "precision": 0.9270833333333334,
+      "recall": 0.9081632653061225,
+      "f1": 0.9175257731958762,
+      "inference_time_seconds_per_sample": 0.0010003580001648514,
+      "model_size_bytes": 303960
+    },
+    "pytorch_bilstm": {
+      "accuracy": 0.9755154639175257,
+      "precision": 0.8910891089108911,
+      "recall": 0.9183673469387755,
+      "f1": 0.9045226130653267,
+      "inference_time_seconds_per_sample": 0.0019288539997069165,
+      "model_size_bytes": 6441685
+    },
+    "transformer": {
+      "accuracy": 0.990979381443299,
+      "precision": 1.0,
+      "recall": 0.9285714285714286,
+      "f1": 0.9629629629629629,
+      "inference_time_seconds_per_sample": 0.028948577999835835,
+      "model_size_bytes": 804272239
+    }
+  },
+  "note": "The Transformer is evaluated once on the held-out test set after training and validation-based model selection."
+}
