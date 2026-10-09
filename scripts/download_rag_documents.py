@@ -1,9 +1,13 @@
+# این اسکریپت اسناد مستندات FastAPI را از منبع رسمی دریافت می‌کند.
+
 from pathlib import Path
 from urllib.request import urlopen
 
 
+# نشانی ریشه اسناد رسمی FastAPI که به‌صورت بازتولیدپذیر دریافت می‌شوند.
 BASE_URL = "https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs"
 
+# نگاشت نام محلی هر فایل به مسیر آن در مخزن منبع.
 DOCUMENTS = {
     "index.md": "index.md",
     "tutorial_first_steps.md": "tutorial/first-steps.md",
@@ -28,6 +32,7 @@ DOCUMENTS = {
 }
 
 
+# دانلود اسناد و ذخیره آن‌ها در پوشه داده‌های RAG.
 def download_documents() -> None:
     output_dir = Path("data/rag_documents")
     output_dir.mkdir(parents=True, exist_ok=True)
