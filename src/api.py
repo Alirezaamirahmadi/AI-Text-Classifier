@@ -10,6 +10,8 @@ from starlette.responses import JSONResponse
 from .config import MAX_TEXT_LENGTH, MODEL_PATH, MODEL_VERSION
 from .predict import load_model, predict
 from .dl_predict import load_pytorch_model, predict_dl
+from src.rag.api import router as rag_router
+
 try:
     from .transformer_predict import load_transformer_model, predict_transformer
 except ImportError:
@@ -56,9 +58,13 @@ def create_app(
     loaded_transformer_bundle = transformer_bundle
 
     app = FastAPI(
-        title="AI Text Classifier",
-        version=MODEL_VERSION,
-    )
+    title="AI Text Classifier",
+    version=MODEL_VERSION,
+    docs_url=None,
+    redoc_url=None,
+    openapi_url=None,
+)
+    app.include_router(rag_router)
 
     # خطاهای پیش‌بینی‌نشده نباید traceback داخلی را در پاسخ API نمایش دهند.
     @app.exception_handler(Exception)

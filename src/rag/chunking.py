@@ -1,8 +1,11 @@
+# این ماژول متن اسناد را به قطعات هم‌پوشان و دارای فراداده تقسیم می‌کند.
+
 from dataclasses import dataclass
 
 from src.rag.ingestion import Document
 
 
+# نگهداری متن هر قطعه به همراه شناسه و محدوده آن در سند.
 @dataclass
 class Chunk:
     chunk_id: str
@@ -14,6 +17,7 @@ class Chunk:
     end_char: int
 
 
+# تقسیم یک سند به قطعات هم‌پوشان با اندازه قابل تنظیم.
 def chunk_document(
     document: Document,
     chunk_size: int = 500,
@@ -58,6 +62,7 @@ def chunk_document(
     return chunks
 
 
+# اعمال قطعه‌بندی یکسان روی همه اسناد ورودی.
 def chunk_documents(
     documents: list[Document],
     chunk_size: int = 500,

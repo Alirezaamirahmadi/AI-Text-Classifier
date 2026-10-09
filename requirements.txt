@@ -12,3 +12,5 @@ transformers
 tokenizers
 safetensors
 datasets
+sentence-transformers
+faiss-cpu

@@ -1,8 +1,11 @@
+# این ماژول اسناد Markdown را می‌خواند و متن آن‌ها را پاک‌سازی می‌کند.
+
 from dataclasses import dataclass
 from pathlib import Path
 import re
 
 
+# ساختار داده‌ای سند همراه با شناسه، منبع، عنوان و متن.
 @dataclass
 class Document:
     document_id: str
@@ -11,6 +14,7 @@ class Document:
     text: str
 
 
+# یکدست‌سازی فاصله‌ها و شکست‌خط‌ها بدون حذف محتوای اصلی.
 def clean_text(text: str) -> str:
     text = text.replace("\r\n", "\n").replace("\r", "\n")
     text = re.sub(r"[ \t]+", " ", text)
@@ -18,6 +22,7 @@ def clean_text(text: str) -> str:
     return text.strip()
 
 
+# استخراج عنوان از تیتر نخست Markdown یا نام فایل.
 def extract_title(text: str, fallback: str) -> str:
     for line in text.splitlines():
         line = line.strip()
@@ -27,6 +32,7 @@ def extract_title(text: str, fallback: str) -> str:
     return Path(fallback).stem.replace("_", " ").replace("-", " ").title()
 
 
+# خواندن، اعتبارسنجی و آماده‌سازی فایل‌های Markdown.
 def load_documents(directory: str | Path = "data/rag_documents") -> list[Document]:
     directory = Path(directory)
 

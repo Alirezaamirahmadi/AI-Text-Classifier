@@ -16,3 +16,11 @@ Thumbs.db
 
 # Model artifacts
 models/transformer_v1/
+
+# Generated RAG artifacts
+data/rag_index/
+data/rag_test_index/
+
+# Local evaluation outputs (keep source queries tracked)
+data/rag_evaluation/*
+!data/rag_evaluation/queries.json
