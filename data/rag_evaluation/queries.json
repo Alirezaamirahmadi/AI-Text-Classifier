@@ -1,0 +1,82 @@
+[
+  {
+    "query": "How do I declare a path parameter in FastAPI?",
+    "expected_source": "tutorial_path_params.md"
+  },
+  {
+    "query": "How do I define query parameters with default values?",
+    "expected_source": "tutorial_query_params.md"
+  },
+  {
+    "query": "How do I receive a JSON request body using a Pydantic model?",
+    "expected_source": "tutorial_body.md"
+  },
+  {
+    "query": "How can I use a response model to validate and filter returned data?",
+    "expected_source": "tutorial_response_model.md"
+  },
+  {
+    "query": "How do I upload files in a FastAPI endpoint?",
+    "expected_source": "tutorial_request_files.md"
+  },
+  {
+    "query": "How should I raise HTTP errors when a resource is missing?",
+    "expected_source": "tutorial_handling_errors.md"
+  },
+  {
+    "query": "How do dependencies work and how can they be shared between endpoints?",
+    "expected_source": "tutorial_dependencies.md"
+  },
+  {
+    "query": "How do I add OAuth2 password bearer authentication?",
+    "expected_source": "tutorial_security.md"
+  },
+  {
+    "query": "How do I run a background task after returning a response?",
+    "expected_source": "tutorial_background_tasks.md"
+  },
+  {
+    "query": "How do I configure CORS middleware for a frontend application?",
+    "expected_source": "tutorial_cors.md"
+  },
+  {
+    "query": "How can I connect a FastAPI application to a SQL database?",
+    "expected_source": "tutorial_sql_databases.md"
+  },
+  {
+    "query": "How do I write tests for FastAPI using TestClient?",
+    "expected_source": "tutorial_testing.md"
+  },
+  {
+    "query": "How do I create and register custom middleware?",
+    "expected_source": "tutorial_middleware.md"
+  },
+  {
+    "query": "How do I create a WebSocket endpoint and exchange messages?",
+    "expected_source": "tutorial_websockets.md"
+  },
+  {
+    "query": "How do I configure application startup and shutdown events?",
+    "expected_source": "tutorial_events.md"
+  },
+  {
+    "query": "How do I add tags and metadata to the OpenAPI documentation?",
+    "expected_source": "tutorial_metadata.md"
+  },
+  {
+    "query": "How do I serve static files from a directory?",
+    "expected_source": "tutorial_static_files.md"
+  },
+  {
+    "query": "How does FastAPI handle the first request and return a response?",
+    "expected_source": "tutorial_first_steps.md"
+  },
+  {
+    "query": "What is FastAPI and what are its main features?",
+    "expected_source": "index.md"
+  },
+  {
+    "query": "How can I use middleware to process requests and responses?",
+    "expected_source": "advanced_middleware.md"
+  }
+]
