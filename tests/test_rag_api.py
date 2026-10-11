@@ -1,3 +1,5 @@
+"""Test request validation and error handling for the RAG API endpoints."""
+
 # این آزمون‌ها اعتبارسنجی و پاسخ‌های نقاط پایانی RAG را بررسی می‌کنند.
 
 from fastapi import FastAPI
@@ -127,3 +129,142 @@ def test_clear_retriever_cache_runs():
     rag_api.clear_retriever_cache()
     assert isinstance(rag_api._retrievers, dict)
     assert len(rag_api._retrievers) == 0
+
+def test_answer_rejects_empty_question():
+    response = client.post(
+        "/answer",
+        json={"question": "   "},
+    )
+    assert response.status_code == 422
+
+
+def test_answer_rejects_top_k_out_of_range():
+    for top_k in (0, 21):
+        response = client.post(
+            "/answer",
+            json={"question": "What is RAG?", "top_k": top_k},
+        )
+        assert response.status_code == 422
+
+
+def test_answer_rejects_non_positive_context_limit():
+    response = client.post(
+        "/answer",
+        json={
+            "question": "What is RAG?",
+            "max_context_chars": 0,
+        },
+    )
+    assert response.status_code == 422
+
+
+def test_answer_returns_503_when_index_is_missing(monkeypatch, tmp_path):
+    index_dir = tmp_path / "missing_index"
+
+    monkeypatch.setattr(
+        rag_api,
+        "_normalise_index_dir",
+        lambda _: str(index_dir),
+    )
+
+    response = client.post(
+        "/answer",
+        json={
+            "question": "What is RAG?",
+            "index_dir": str(index_dir),
+        },
+    )
+
+    assert response.status_code == 503
+    assert "call POST /ingest first" in response.json()["detail"]
+
+
+def test_answer_uses_cached_retriever(monkeypatch, tmp_path):
+    index_dir = str(tmp_path / "index")
+    fake_retriever = object()
+    expected = {
+        "answer": "RAG uses retrieved context. [Source 1]",
+        "status": "answered",
+        "citations": [{"source_number": 1}],
+        "retrieved_chunks": [],
+    }
+
+    monkeypatch.setattr(rag_api, "_normalise_index_dir", lambda _: index_dir)
+    rag_api.clear_retriever_cache()
+    rag_api._retrievers[index_dir] = fake_retriever
+
+    def fake_answer_question(**kwargs):
+        assert kwargs["question"] == "What is RAG?"
+        assert kwargs["retriever"] is fake_retriever
+        assert kwargs["top_k"] == 3
+        assert kwargs["max_context_chars"] == 500
+        return expected
+
+    monkeypatch.setattr(rag_api, "answer_question", fake_answer_question)
+
+    try:
+        response = client.post(
+            "/answer",
+            json={
+                "question": "  What is RAG?  ",
+                "top_k": 3,
+                "max_context_chars": 500,
+                "index_dir": index_dir,
+            },
+        )
+        assert response.status_code == 200
+        assert response.json() == expected
+    finally:
+        rag_api.clear_retriever_cache()
+
+# خطاهای قابل انتظار در منطق پاسخ‌گویی باید به پاسخ HTTP 400 تبدیل شوند.
+def test_answer_returns_400_when_answer_question_raises_value_error(
+    monkeypatch, tmp_path
+):
+    index_dir = str(tmp_path / "index")
+    fake_retriever = object()
+
+    monkeypatch.setattr(rag_api, "_normalise_index_dir", lambda _: index_dir)
+    rag_api.clear_retriever_cache()
+    rag_api._retrievers[index_dir] = fake_retriever
+    monkeypatch.setattr(
+        rag_api,
+        "answer_question",
+        lambda **kwargs: (_ for _ in ()).throw(ValueError("invalid context")),
+    )
+
+    try:
+        response = client.post(
+            "/answer",
+            json={"question": "What is RAG?", "index_dir": index_dir},
+        )
+        assert response.status_code == 400
+        assert response.json()["detail"] == "invalid context"
+    finally:
+        rag_api.clear_retriever_cache()
+
+
+# خطاهای پیش‌بینی‌نشده باید پاسخ عمومی بدهند و جزئیات داخلی را افشا نکنند.
+def test_answer_returns_500_for_unexpected_error(monkeypatch, tmp_path):
+    index_dir = str(tmp_path / "index")
+    fake_retriever = object()
+
+    monkeypatch.setattr(rag_api, "_normalise_index_dir", lambda _: index_dir)
+    rag_api.clear_retriever_cache()
+    rag_api._retrievers[index_dir] = fake_retriever
+    monkeypatch.setattr(
+        rag_api,
+        "answer_question",
+        lambda **kwargs: (_ for _ in ()).throw(RuntimeError("internal detail")),
+    )
+
+    try:
+        response = client.post(
+            "/answer",
+            json={"question": "What is RAG?", "index_dir": index_dir},
+        )
+        assert response.status_code == 500
+        assert response.json()["detail"] == "Answer generation failed"
+        assert "internal detail" not in response.text
+    finally:
+        rag_api.clear_retriever_cache()
