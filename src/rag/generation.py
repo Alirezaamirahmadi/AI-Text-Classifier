@@ -1,4 +1,4 @@
-﻿"""Generate concise answers from retrieved context through the OpenRouter API."""
+"""Generate concise answers from retrieved context through OpenRouter or a local OpenAI-compatible server."""
 
 import os
 from typing import Any
@@ -23,8 +23,14 @@ def generate_answer(
     """Generate an answer grounded only in the supplied document context."""
     # کلید API از متغیر محیطی خوانده می‌شود تا در کد منبع ذخیره نشود.
     api_key = os.getenv("OPENROUTER_API_KEY")
-    if not api_key:
+    # اگر LLM_BASE_URL تنظیم شود (مثلاً سرور مدل داخلی)، از آن استفاده می‌شود و کلید لازم نیست.
+    custom_url = os.getenv("LLM_BASE_URL")
+    if not api_key and not custom_url:
         raise GenerationError("OPENROUTER_API_KEY is not configured")
+    url = custom_url or OPENROUTER_URL
+    headers = {"Content-Type": "application/json"}
+    if api_key:
+        headers["Authorization"] = f"Bearer {api_key}"
 
     if not question.strip() or not context.strip():
         raise ValueError("question and context must not be empty")
@@ -61,11 +67,8 @@ Keep the answer concise, with citations next to supported claims.
     # درخواست شبکه در یک بلوک try قرار دارد تا خطاهای سرویس به خطای مشخص تبدیل شوند.
     try:
         response = httpx.post(
-            OPENROUTER_URL,
-            headers={
-                "Authorization": f"Bearer {api_key}",
-                "Content-Type": "application/json",
-            },
+            url,
+            headers=headers,
             json={
                 "model": selected_model,
                 "messages": [
@@ -73,7 +76,7 @@ Keep the answer concise, with citations next to supported claims.
                     {"role": "user", "content": user_prompt},
                 ],
                 "temperature": 0,
-                "max_tokens": 300,
+                "max_tokens": 2048,
             },
             timeout=timeout,
         )

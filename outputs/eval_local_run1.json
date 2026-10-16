@@ -1,0 +1,659 @@
+[
+ {
+  "id": "RAG-001",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_path_params.md"
+  ],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-002",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_query_params.md"
+  ],
+  "status": "answered",
+  "answer": "The provided documents do not contain enough information to answer the question about defining query parameters with default values. The excerpt [Source 1] discusses how to declare multiple path and query parameters, while [Source 2] and [Source 3] provide information about query parameters, including their type conversion and defaults. The excerpt [Source 4] and [Source 5] discuss query parameters, including their type conversion and defaults. Therefore, the answer cannot be directly derived from the given documents.",
+  "cited": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "sources": [
+   "tutorial_query_params.md",
+   "tutorial_query_params.md",
+   "tutorial_query_params.md",
+   "tutorial_query_params.md",
+   "tutorial_query_params.md"
+  ]
+ },
+ {
+  "id": "RAG-003",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_body.md"
+  ],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-004",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_response_model.md"
+  ],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-005",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_request_files.md"
+  ],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-006",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_handling_errors.md"
+  ],
+  "status": "uncited",
+  "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-007",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_dependencies.md"
+  ],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-008",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_security.md"
+  ],
+  "status": "uncited",
+  "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-009",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_background_tasks.md"
+  ],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-010",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_cors.md"
+  ],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-011",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_sql_databases.md"
+  ],
+  "status": "answered",
+  "answer": "[Source 1] title=SQL (Relational) Databases { #sql-relational-databases } | source=tutorial_sql_databases.md | document_id=doc_017 | chunk_id=doc_017_chunk_0000 | score=0.6503\n[Source 2] title=SQL (Relational) Databases { #sql-relational-databases } | source=tutorial_sql_databases.md | document_id=doc_017 | chunk_id=doc_017_chunk_0001 | score=0.6072\n[Source 3] title=SQL (Relational) Databases { #sql-relational-databases } | source=tutorial_sql_databases.md | document_id=doc_017 | chunk_id=doc_017_chunk_0005 | score=0.5609\n[Source 4] title=First Steps { #first-steps } | source=tutorial_first_steps.md | document_id=doc_008 | chunk_id=doc_008_chunk_0012 | score=0.5315\n[Source 5] title=SQL (Relational) Databases { #sql-relational-databases } | source=tutorial_sql_databases.md | document_id=doc_017 | chunk_id=doc_017_chunk_0011 | score=0.5233",
+  "cited": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "sources": [
+   "tutorial_sql_databases.md",
+   "tutorial_sql_databases.md",
+   "tutorial_sql_databases.md",
+   "tutorial_first_steps.md",
+   "tutorial_sql_databases.md"
+  ]
+ },
+ {
+  "id": "RAG-012",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_testing.md"
+  ],
+  "status": "answered",
+  "answer": "[Source 1] title=Testing { #testing } | source=tutorial_testing.md | document_id=doc_019 | chunk_id=doc_019_chunk_0002 | score=0.6739\n[Source 2] title=First Steps { #first-steps } | source=tutorial_first_steps.md | document_id=doc_008 | chunk_id=doc_008_chunk_0000 | score=0.5637\n[Source 3] title=First Steps { #first-steps } | source=tutorial_first_steps.md | document_id=doc_008 | chunk_id=doc_008_chunk_0008 | score=0.5512\n[Source 4] title=Testing { #testing } | source=tutorial_testing.md | document_id=doc_019 | chunk_id=doc_019_chunk_0000 | score=0.6739\n[Source 5] title=First Steps { #first-steps } | source=tutorial_first_steps.md | document_id=doc_008 | chunk_id=doc_008_chunk_0012 | score=0.5258",
+  "cited": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "sources": [
+   "tutorial_testing.md",
+   "tutorial_first_steps.md",
+   "tutorial_first_steps.md",
+   "tutorial_testing.md",
+   "tutorial_first_steps.md"
+  ]
+ },
+ {
+  "id": "RAG-013",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_middleware.md"
+  ],
+  "status": "answered",
+  "answer": "[Source 1] [Source 2]",
+  "cited": [
+   1,
+   2
+  ],
+  "sources": [
+   "tutorial_middleware.md",
+   "tutorial_cors.md"
+  ]
+ },
+ {
+  "id": "RAG-014",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_websockets.md"
+  ],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-015",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_events.md"
+  ],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-016",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_metadata.md"
+  ],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-017",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_static_files.md"
+  ],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-018",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "index.md"
+  ],
+  "status": "answered",
+  "answer": "[Source 1] FastAPI Cloud is the primary sponsor and funding provider for the *FastAPI and friends* open source projects. ✨\n\n[Source 2] FastAPI is a modern, fast (high-performance), web framework for building APIs with Python based on standard Python type hints. The key features are: Fast, Fast to code, Fewer bugs, Intuitive, Easy, Short.",
+  "cited": [
+   1,
+   2
+  ],
+  "sources": [
+   "index.md",
+   "tutorial_path_params.md"
+  ]
+ },
+ {
+  "id": "RAG-019",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "advanced_middleware.md"
+  ],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-020",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_path_params.md"
+  ],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-021",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_path_params.md"
+  ],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-022",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_query_params.md"
+  ],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-023",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_body.md"
+  ],
+  "status": "uncited",
+  "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-024",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_response_model.md"
+  ],
+  "status": "uncited",
+  "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-025",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_background_tasks.md"
+  ],
+  "status": "answered",
+  "answer": "[Source 1] title=Background Tasks { #background-tasks } | source=tutorial_background_tasks.md | document_id=doc_003 | chunk_id=doc_003_chunk_0000 | score=0.7457\n[Source 2] title=Background Tasks { #background-tasks } | source=tutorial_background_tasks.md | document_id=doc_003 | chunk_id=doc_003_chunk_0005 | score=0.5924\n[Source 3] title=Background Tasks { #background-tasks } | source=tutorial_background_tasks.md | document_id=doc_003 | chunk_id=doc_003_chunk_0004 | score=0.5645\n[Source 4] title=Background Tasks { #background-tasks } | source=tutorial_background_tasks.md | document_id=doc_003 | chunk_id=doc_003_chunk_0001 | score=0.5171\n[Source 5] title=Background Tasks { #background-tasks } | source=tutorial_background_tasks.md | document_id=doc_003 | chunk_id=doc_003_chunk_0002 | score=0.4986",
+  "cited": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "sources": [
+   "tutorial_background_tasks.md",
+   "tutorial_background_tasks.md",
+   "tutorial_background_tasks.md",
+   "tutorial_background_tasks.md",
+   "tutorial_background_tasks.md"
+  ]
+ },
+ {
+  "id": "RAG-026",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_cors.md"
+  ],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-027",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_dependencies.md"
+  ],
+  "status": "answered",
+  "answer": "[Source 1] [Source 2]",
+  "cited": [
+   1,
+   2
+  ],
+  "sources": [
+   "tutorial_dependencies.md",
+   "tutorial_dependencies.md"
+  ]
+ },
+ {
+  "id": "RAG-028",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_websockets.md"
+  ],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-029",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_path_params.md"
+  ],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-030",
+  "category": "direct_single_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_request_files.md"
+  ],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-031",
+  "category": "multi_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_body.md",
+   "tutorial_response_model.md"
+  ],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-032",
+  "category": "multi_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_dependencies.md",
+   "tutorial_testing.md",
+   "tutorial_response_model.md"
+  ],
+  "status": "uncited",
+  "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-033",
+  "category": "multi_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_security.md",
+   "tutorial_dependencies.md"
+  ],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-034",
+  "category": "multi_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_middleware.md",
+   "tutorial_cors.md"
+  ],
+  "status": "uncited",
+  "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-035",
+  "category": "multi_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_sql_databases.md",
+   "tutorial_background_tasks.md"
+  ],
+  "status": "generation_unavailable",
+  "answer": "Answer generation is temporarily unavailable. Please try again later.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-036",
+  "category": "multi_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_metadata.md",
+   "tutorial_response_model.md"
+  ],
+  "status": "uncited",
+  "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-037",
+  "category": "multi_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_request_files.md",
+   "tutorial_testing.md"
+  ],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-038",
+  "category": "multi_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_path_params.md",
+   "tutorial_query_params.md"
+  ],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-039",
+  "category": "multi_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_websockets.md",
+   "tutorial_events.md"
+  ],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-040",
+  "category": "multi_document",
+  "answerable": true,
+  "expected": [
+   "tutorial_body.md",
+   "tutorial_handling_errors.md"
+  ],
+  "status": "uncited",
+  "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-041",
+  "category": "ambiguous",
+  "answerable": false,
+  "expected": [],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-042",
+  "category": "ambiguous",
+  "answerable": false,
+  "expected": [],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-043",
+  "category": "ambiguous",
+  "answerable": false,
+  "expected": [],
+  "status": "insufficient_context",
+  "answer": "The provided documents do not contain enough information to answer this question.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-044",
+  "category": "ambiguous",
+  "answerable": false,
+  "expected": [],
+  "status": "uncited",
+  "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-045",
+  "category": "ambiguous",
+  "answerable": false,
+  "expected": [],
+  "status": "uncited",
+  "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-046",
+  "category": "out_of_scope",
+  "answerable": false,
+  "expected": [],
+  "status": "uncited",
+  "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-047",
+  "category": "out_of_scope",
+  "answerable": false,
+  "expected": [],
+  "status": "uncited",
+  "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-048",
+  "category": "out_of_scope",
+  "answerable": false,
+  "expected": [],
+  "status": "uncited",
+  "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-049",
+  "category": "out_of_scope",
+  "answerable": false,
+  "expected": [],
+  "status": "uncited",
+  "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+  "cited": [],
+  "sources": []
+ },
+ {
+  "id": "RAG-050",
+  "category": "out_of_scope",
+  "answerable": false,
+  "expected": [],
+  "status": "uncited",
+  "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+  "cited": [],
+  "sources": []
+ }
+]
