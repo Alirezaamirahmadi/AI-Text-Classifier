@@ -30,6 +30,16 @@ def _failure(answer: str, status: str, retrieved_chunks: list[dict[str, Any]]) -
 
 
 
+
+def looks_like_context_dump(text):
+    """True if the answer is copied context or only citation markers."""
+    lowered = text.lower()
+    if "chunk_id=" in lowered or "source=" in lowered or "title=" in lowered:
+        return True
+    words_only = re.sub(r"\[Source\s+\d+\]", "", text, flags=re.IGNORECASE)
+    return len(words_only.strip()) < 5
+
+
 def answer_question(
     question: str,
     retriever: Retriever,
@@ -100,6 +110,14 @@ def answer_question(
         "determine response",
     )
     if any(phrase in generated.lower() for phrase in suspicious_phrases):
+        return _failure(
+            "The generated response could not be verified. Please try again.",
+            "invalid_generation",
+            usable_results,
+        )
+
+    # جواب باید متن واقعی باشد؛ کپی Context یا فقط ارجاع خالی قبول نیست.
+    if looks_like_context_dump(generated):
         return _failure(
             "The generated response could not be verified. Please try again.",
             "invalid_generation",

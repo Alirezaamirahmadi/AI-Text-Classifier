@@ -203,3 +203,28 @@ def retriever_with_one_chunk():
          "document_id": "doc-1", "chunk_id": "chunk-1"}
     ]
     return retriever
+
+
+def test_context_copy_is_rejected():
+    from src.rag.answering import looks_like_context_dump
+
+    assert looks_like_context_dump("[Source 1] title=SQL | source=tutorial_sql.md | chunk_id=doc_1") is True
+
+
+def test_citation_only_answer_is_rejected():
+    from src.rag.answering import looks_like_context_dump
+
+    assert looks_like_context_dump("[Source 1] [Source 2]") is True
+
+
+def test_real_answer_is_not_rejected():
+    from src.rag.answering import looks_like_context_dump
+
+    assert looks_like_context_dump("Use HTTPException with a status code of 404 [Source 2].") is False
+
+
+@patch("src.rag.answering.generate_answer")
+def test_context_copy_gives_invalid_generation(mock_generate):
+    mock_generate.return_value = "[Source 1] title=AI | source=ai.txt | chunk_id=chunk-1"
+    result = answer_question("What is AI?", retriever_with_one_chunk())
+    assert result["status"] == "invalid_generation"
