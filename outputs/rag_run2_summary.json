@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "git_commit": "a2bdfb9396c93d603cbbe4de174ee2484434f7cc",
+    "file_last_write": "2026-11-01 02:26:45",
+    "index_dir": "data/rag_index/strategy_800_150",
+    "top_k": 5,
+    "max_context_chars": 10000,
+    "max_tokens": 2048,
+    "llm_base_url": "http://127.0.0.1:8081/v1/chat/completions",
+    "llm_model": "qwen2.5-0.5b",
+    "dataset_cases": 78,
+    "note": "metadata written after the run from the saved results file"
+  },
+  "total": 78,
+  "status_counts": {
+    "insufficient_context": 33,
+    "answered": 4,
+    "uncited": 29,
+    "invalid_generation": 11,
+    "generation_unavailable": 1
+  },
+  "failures_count": 41
+}

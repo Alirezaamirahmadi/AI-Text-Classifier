@@ -1,0 +1,665 @@
+{
+  "failures": [
+    {
+      "id": "RAG-001",
+      "answerable": true,
+      "status": "insufficient_context",
+      "expected_sources": [
+        "tutorial_path_params.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_query_params.md",
+        "tutorial_path_params.md",
+        "tutorial_static_files.md",
+        "tutorial_dependencies.md",
+        "tutorial_first_steps.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-003",
+      "answerable": true,
+      "status": "insufficient_context",
+      "expected_sources": [
+        "tutorial_body.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_body.md",
+        "tutorial_body.md",
+        "tutorial_body.md",
+        "tutorial_body.md",
+        "tutorial_response_model.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-004",
+      "answerable": true,
+      "status": "insufficient_context",
+      "expected_sources": [
+        "tutorial_response_model.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_response_model.md",
+        "tutorial_response_model.md",
+        "tutorial_response_model.md",
+        "tutorial_response_model.md",
+        "tutorial_response_model.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-005",
+      "answerable": true,
+      "status": "insufficient_context",
+      "expected_sources": [
+        "tutorial_request_files.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_request_files.md",
+        "tutorial_request_files.md",
+        "tutorial_request_files.md",
+        "tutorial_first_steps.md",
+        "tutorial_request_files.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-006",
+      "answerable": true,
+      "status": "uncited",
+      "expected_sources": [
+        "tutorial_handling_errors.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_handling_errors.md",
+        "tutorial_handling_errors.md",
+        "tutorial_handling_errors.md",
+        "tutorial_handling_errors.md",
+        "tutorial_handling_errors.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld."
+    },
+    {
+      "id": "RAG-007",
+      "answerable": true,
+      "status": "insufficient_context",
+      "expected_sources": [
+        "tutorial_dependencies.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_dependencies.md",
+        "tutorial_dependencies.md",
+        "tutorial_dependencies.md",
+        "tutorial_dependencies.md",
+        "tutorial_middleware.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-008",
+      "answerable": true,
+      "status": "uncited",
+      "expected_sources": [
+        "tutorial_security.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_security.md",
+        "tutorial_security.md",
+        "tutorial_security.md",
+        "tutorial_security.md",
+        "tutorial_security.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld."
+    },
+    {
+      "id": "RAG-009",
+      "answerable": true,
+      "status": "insufficient_context",
+      "expected_sources": [
+        "tutorial_background_tasks.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_background_tasks.md",
+        "tutorial_middleware.md",
+        "tutorial_background_tasks.md",
+        "tutorial_background_tasks.md",
+        "tutorial_middleware.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-010",
+      "answerable": true,
+      "status": "insufficient_context",
+      "expected_sources": [
+        "tutorial_cors.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_cors.md",
+        "tutorial_cors.md",
+        "tutorial_cors.md",
+        "tutorial_cors.md",
+        "advanced_middleware.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-011",
+      "answerable": true,
+      "status": "invalid_generation",
+      "expected_sources": [
+        "tutorial_sql_databases.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_sql_databases.md",
+        "tutorial_sql_databases.md",
+        "tutorial_sql_databases.md",
+        "tutorial_first_steps.md",
+        "tutorial_sql_databases.md"
+      ],
+      "answer": "The generated response could not be verified. Please try again."
+    },
+    {
+      "id": "RAG-012",
+      "answerable": true,
+      "status": "invalid_generation",
+      "expected_sources": [
+        "tutorial_testing.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_testing.md",
+        "tutorial_first_steps.md",
+        "tutorial_first_steps.md",
+        "tutorial_testing.md",
+        "tutorial_first_steps.md"
+      ],
+      "answer": "The generated response could not be verified. Please try again."
+    },
+    {
+      "id": "RAG-013",
+      "answerable": true,
+      "status": "invalid_generation",
+      "expected_sources": [
+        "tutorial_middleware.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_middleware.md",
+        "tutorial_cors.md",
+        "advanced_middleware.md",
+        "advanced_middleware.md",
+        "tutorial_middleware.md"
+      ],
+      "answer": "The generated response could not be verified. Please try again."
+    },
+    {
+      "id": "RAG-014",
+      "answerable": true,
+      "status": "insufficient_context",
+      "expected_sources": [
+        "tutorial_websockets.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_websockets.md",
+        "tutorial_websockets.md",
+        "tutorial_websockets.md",
+        "tutorial_websockets.md",
+        "tutorial_websockets.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-015",
+      "answerable": true,
+      "status": "insufficient_context",
+      "expected_sources": [
+        "tutorial_events.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_events.md",
+        "tutorial_events.md",
+        "tutorial_events.md",
+        "tutorial_events.md",
+        "tutorial_events.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-016",
+      "answerable": true,
+      "status": "insufficient_context",
+      "expected_sources": [
+        "tutorial_metadata.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_metadata.md",
+        "tutorial_metadata.md",
+        "tutorial_metadata.md",
+        "tutorial_metadata.md",
+        "tutorial_body.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-017",
+      "answerable": true,
+      "status": "insufficient_context",
+      "expected_sources": [
+        "tutorial_static_files.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_static_files.md",
+        "tutorial_static_files.md",
+        "tutorial_static_files.md",
+        "tutorial_request_files.md",
+        "tutorial_request_files.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-019",
+      "answerable": true,
+      "status": "insufficient_context",
+      "expected_sources": [
+        "advanced_middleware.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_middleware.md",
+        "tutorial_middleware.md",
+        "tutorial_middleware.md",
+        "tutorial_cors.md",
+        "tutorial_cors.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-020",
+      "answerable": true,
+      "status": "insufficient_context",
+      "expected_sources": [
+        "tutorial_path_params.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_query_params.md",
+        "tutorial_path_params.md",
+        "tutorial_path_params.md",
+        "tutorial_path_params.md",
+        "tutorial_path_params.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-021",
+      "answerable": true,
+      "status": "insufficient_context",
+      "expected_sources": [
+        "tutorial_path_params.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_query_params.md",
+        "tutorial_path_params.md",
+        "tutorial_path_params.md",
+        "tutorial_query_params.md",
+        "tutorial_dependencies.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-022",
+      "answerable": true,
+      "status": "insufficient_context",
+      "expected_sources": [
+        "tutorial_query_params.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_query_params.md",
+        "tutorial_query_params.md",
+        "tutorial_query_params.md",
+        "tutorial_query_params.md",
+        "tutorial_query_params.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-023",
+      "answerable": true,
+      "status": "uncited",
+      "expected_sources": [
+        "tutorial_body.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_body.md",
+        "tutorial_body.md",
+        "tutorial_body.md",
+        "tutorial_body.md",
+        "tutorial_response_model.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld."
+    },
+    {
+      "id": "RAG-024",
+      "answerable": true,
+      "status": "uncited",
+      "expected_sources": [
+        "tutorial_response_model.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_response_model.md",
+        "tutorial_response_model.md",
+        "tutorial_response_model.md",
+        "tutorial_response_model.md",
+        "tutorial_response_model.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld."
+    },
+    {
+      "id": "RAG-025",
+      "answerable": true,
+      "status": "invalid_generation",
+      "expected_sources": [
+        "tutorial_background_tasks.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_background_tasks.md",
+        "tutorial_background_tasks.md",
+        "tutorial_background_tasks.md",
+        "tutorial_background_tasks.md",
+        "tutorial_background_tasks.md"
+      ],
+      "answer": "The generated response could not be verified. Please try again."
+    },
+    {
+      "id": "RAG-026",
+      "answerable": true,
+      "status": "insufficient_context",
+      "expected_sources": [
+        "tutorial_cors.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_cors.md",
+        "tutorial_cors.md",
+        "advanced_middleware.md",
+        "tutorial_cors.md",
+        "tutorial_cors.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-027",
+      "answerable": true,
+      "status": "invalid_generation",
+      "expected_sources": [
+        "tutorial_dependencies.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_dependencies.md",
+        "tutorial_dependencies.md",
+        "tutorial_dependencies.md",
+        "tutorial_security.md",
+        "tutorial_dependencies.md"
+      ],
+      "answer": "The generated response could not be verified. Please try again."
+    },
+    {
+      "id": "RAG-028",
+      "answerable": true,
+      "status": "insufficient_context",
+      "expected_sources": [
+        "tutorial_websockets.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_websockets.md",
+        "tutorial_websockets.md",
+        "tutorial_websockets.md",
+        "tutorial_websockets.md",
+        "tutorial_websockets.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-029",
+      "answerable": true,
+      "status": "insufficient_context",
+      "expected_sources": [
+        "tutorial_path_params.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_handling_errors.md",
+        "tutorial_handling_errors.md",
+        "tutorial_handling_errors.md",
+        "tutorial_handling_errors.md",
+        "tutorial_handling_errors.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-030",
+      "answerable": true,
+      "status": "insufficient_context",
+      "expected_sources": [
+        "tutorial_request_files.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_request_files.md",
+        "tutorial_request_files.md",
+        "tutorial_request_files.md",
+        "tutorial_request_files.md",
+        "tutorial_request_files.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-031",
+      "answerable": true,
+      "status": "insufficient_context",
+      "expected_sources": [
+        "tutorial_body.md",
+        "tutorial_response_model.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_response_model.md",
+        "tutorial_response_model.md",
+        "tutorial_response_model.md",
+        "tutorial_response_model.md",
+        "tutorial_response_model.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-032",
+      "answerable": true,
+      "status": "uncited",
+      "expected_sources": [
+        "tutorial_dependencies.md",
+        "tutorial_testing.md",
+        "tutorial_response_model.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_response_model.md",
+        "tutorial_response_model.md",
+        "tutorial_response_model.md",
+        "tutorial_response_model.md",
+        "tutorial_events.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld."
+    },
+    {
+      "id": "RAG-033",
+      "answerable": true,
+      "status": "insufficient_context",
+      "expected_sources": [
+        "tutorial_security.md",
+        "tutorial_dependencies.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_dependencies.md",
+        "tutorial_dependencies.md",
+        "tutorial_dependencies.md",
+        "tutorial_security.md",
+        "tutorial_security.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-034",
+      "answerable": true,
+      "status": "uncited",
+      "expected_sources": [
+        "tutorial_middleware.md",
+        "tutorial_cors.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_cors.md",
+        "tutorial_cors.md",
+        "tutorial_middleware.md",
+        "tutorial_cors.md",
+        "advanced_middleware.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld."
+    },
+    {
+      "id": "RAG-035",
+      "answerable": true,
+      "status": "invalid_generation",
+      "expected_sources": [
+        "tutorial_sql_databases.md",
+        "tutorial_background_tasks.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_background_tasks.md",
+        "tutorial_events.md",
+        "tutorial_background_tasks.md",
+        "tutorial_middleware.md",
+        "tutorial_sql_databases.md"
+      ],
+      "answer": "The generated response could not be verified. Please try again."
+    },
+    {
+      "id": "RAG-036",
+      "answerable": true,
+      "status": "uncited",
+      "expected_sources": [
+        "tutorial_metadata.md",
+        "tutorial_response_model.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_metadata.md",
+        "tutorial_first_steps.md",
+        "tutorial_response_model.md",
+        "tutorial_first_steps.md",
+        "tutorial_body.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld."
+    },
+    {
+      "id": "RAG-037",
+      "answerable": true,
+      "status": "insufficient_context",
+      "expected_sources": [
+        "tutorial_request_files.md",
+        "tutorial_testing.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_request_files.md",
+        "tutorial_request_files.md",
+        "tutorial_request_files.md",
+        "tutorial_request_files.md",
+        "tutorial_request_files.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-038",
+      "answerable": true,
+      "status": "insufficient_context",
+      "expected_sources": [
+        "tutorial_path_params.md",
+        "tutorial_query_params.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_query_params.md",
+        "tutorial_query_params.md",
+        "tutorial_query_params.md",
+        "tutorial_query_params.md",
+        "tutorial_first_steps.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-039",
+      "answerable": true,
+      "status": "insufficient_context",
+      "expected_sources": [
+        "tutorial_websockets.md",
+        "tutorial_events.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_websockets.md",
+        "tutorial_websockets.md",
+        "tutorial_websockets.md",
+        "tutorial_websockets.md",
+        "tutorial_websockets.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-040",
+      "answerable": true,
+      "status": "uncited",
+      "expected_sources": [
+        "tutorial_body.md",
+        "tutorial_handling_errors.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_handling_errors.md",
+        "tutorial_handling_errors.md",
+        "tutorial_handling_errors.md",
+        "tutorial_handling_errors.md",
+        "tutorial_handling_errors.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld."
+    },
+    {
+      "id": "RAG-054",
+      "answerable": false,
+      "status": "generation_unavailable",
+      "expected_sources": [],
+      "retrieved_sources": [
+        "tutorial_first_steps.md",
+        "index.md",
+        "tutorial_metadata.md",
+        "tutorial_first_steps.md",
+        "tutorial_first_steps.md"
+      ],
+      "answer": "Answer generation is temporarily unavailable. Please try again later."
+    },
+    {
+      "id": "RAG-055",
+      "answerable": false,
+      "status": "answered",
+      "expected_sources": [],
+      "retrieved_sources": [
+        "tutorial_dependencies.md",
+        "tutorial_middleware.md",
+        "index.md",
+        "index.md",
+        "tutorial_cors.md"
+      ],
+      "answer": "[Source 1] Microsoft, \"Some of them are getting integrated into the core Windows product and some Office products.\"  \n[Source 2] Kabir Khan, \"We adopted the FastAPI library to spawn a REST server that can be queried to obtain predictions.\"  \n[Source 3] Piero Molino, Yaroslav Dudin, and Sai Sumanth Miryala, \"Netflix is pleased to announce the open-source release of our Crisis Management framework: Dispatch!\"  \n[Source 4] Microsoft, \"Some of them are getting integrated into the core Windows product and some Office products.\"  \n[Source 5] es several middlewares in `fastapi.middleware` just as a convenience for you, the developer. But most of the available middlewares come directly from Starlette."
+    },
+    {
+      "id": "RAG-071",
+      "answerable": false,
+      "status": "answered",
+      "expected_sources": [],
+      "retrieved_sources": [
+        "index.md",
+        "tutorial_first_steps.md",
+        "tutorial_first_steps.md",
+        "tutorial_first_steps.md",
+        "tutorial_first_steps.md"
+      ],
+      "answer": "[Source 1] FastAPI Cloud is the primary sponsor and funding provider for the *FastAPI and friends* open source projects. ✨\n\n[Source 2] FastAPI Cloud is built by the same author and team behind **FastAPI**. 🎉\n\n[Source 3] FastAPI is open source and based on standards. You can deploy FastAPI apps to any cloud provider you choose. 🤓\n\n[Source 4] FastAPI Cloud is built by the same author and team behind **FastAPI**. ✨\n\n[Source 5] FastAPI Cloud is the primary sponsor and funding provider for the *FastAPI and friends* open source projects. 🎉"
+    }
+  ]
+}

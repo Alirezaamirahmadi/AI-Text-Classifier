@@ -4,7 +4,10 @@
     python scripts/run_eval_simple.py
 """
 import json
+import os
+import subprocess
 import time
+from datetime import datetime, timezone
 
 from src.rag.answering import answer_question
 from src.rag.context_builder import build_context
@@ -56,5 +59,51 @@ for case in DATASET["cases"]:
 
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     json.dump(results, f, ensure_ascii=False, indent=2)
+
+# متادیتای اجرا: با این فایل مشخص می‌شود نتیجه از کدام کامیت و تنظیمات آمده است
+commit = subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True, text=True).stdout.strip()
+metadata = {
+    "run_time_utc": datetime.now(timezone.utc).isoformat(),
+    "git_commit": commit,
+    "index_dir": INDEX_DIR,
+    "top_k": TOP_K,
+    "max_context_chars": MAX_CONTEXT_CHARS,
+    "max_tokens": 2048,
+    "llm_base_url": os.getenv("LLM_BASE_URL", "openrouter (default)"),
+    "llm_model": os.getenv("LLM_MODEL", "default"),
+    "dataset_cases": len(DATASET["cases"]),
+    "dataset_version": DATASET.get("version"),
+}
+with open("outputs/rag_run_metadata.json", "w", encoding="utf-8") as f:
+    json.dump(metadata, f, ensure_ascii=False, indent=2)
+
+# خلاصه و فهرست شکست‌ها (از همین نتایج، بدون اجرای مدل)
+counts = {}
+for item in results:
+    key = item["status"]
+    counts[key] = counts.get(key, 0) + 1
+
+failures = []
+for item in results:
+    failed = item["status"] == "generation_unavailable"
+    if item["answerable"] and item["status"] != "answered":
+        failed = True
+    if not item["answerable"] and item["status"] == "answered":
+        failed = True
+    if failed:
+        failures.append({
+            "id": item["id"],
+            "answerable": item["answerable"],
+            "status": item["status"],
+            "expected_sources": item["expected_sources"],
+            "retrieved_sources": [r["source"] for r in item["retrieved"]],
+            "answer": item["answer"],
+        })
+
+with open("outputs/rag_evaluation_summary.json", "w", encoding="utf-8") as f:
+    json.dump({"metadata": metadata, "total": len(results), "status_counts": counts,
+               "failures_count": len(failures)}, f, ensure_ascii=False, indent=2)
+with open("outputs/rag_failure_analysis.json", "w", encoding="utf-8") as f:
+    json.dump({"failures": failures}, f, ensure_ascii=False, indent=2)
 
 print("done", len(results), "saved to", OUTPUT_FILE)
