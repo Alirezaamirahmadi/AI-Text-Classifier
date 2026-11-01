@@ -1,0 +1,11 @@
+{
+  "git_commit": "a2bdfb9396c93d603cbbe4de174ee2484434f7cc",
+  "note": "metadata reconstructed after run 1 from saved results",
+  "index_dir": "data/rag_index/strategy_800_150",
+  "top_k": 5,
+  "max_context_chars": 10000,
+  "max_tokens": 2048,
+  "llm_base_url": "http://127.0.0.1:8081/v1/chat/completions",
+  "llm_model": "qwen2.5-0.5b",
+  "dataset_cases": 78
+}
