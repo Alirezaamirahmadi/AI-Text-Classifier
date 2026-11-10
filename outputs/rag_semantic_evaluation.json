@@ -1,0 +1,11 @@
+{
+  "status": "not_measured",
+  "reason": "داور معنایی مستقل اجرا نشده است.",
+  "metrics": {
+    "answer_correctness": "not_measured",
+    "faithfulness": "not_measured",
+    "citation_support": "not_measured",
+    "answer_relevancy": "not_measured",
+    "abstention_quality_semantic": "not_measured"
+  }
+}

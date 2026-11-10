@@ -10,6 +10,17 @@ from src.rag.answering import answer_question
 
 
 # مدل محلی به OPENROUTER_API_KEY نیاز ندارد؛ درخواست HTTP را شبیه‌سازی می‌کنیم.
+CONTEXT = "[Source 1] AI means artificial intelligence."
+
+
+def make_ok_response(text="AI means artificial intelligence. [Source 1]"):
+    """شبیه‌سازی یک پاسخ موفق از سرویس مدل (فقط برای تست)."""
+    response = Mock()
+    response.json.return_value = {"choices": [{"message": {"content": text}}]}
+    response.raise_for_status.return_value = None
+    return response
+
+
 @patch("src.rag.generation.httpx.post")
 def test_generate_answer_does_not_require_api_key(mock_post, monkeypatch):
     monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
@@ -228,3 +239,13 @@ def test_context_copy_gives_invalid_generation(mock_generate):
     mock_generate.return_value = "[Source 1] title=AI | source=ai.txt | chunk_id=chunk-1"
     result = answer_question("What is AI?", retriever_with_one_chunk())
     assert result["status"] == "invalid_generation"
+
+
+@patch("src.rag.answering.generate_answer")
+def test_refusal_sentence_with_extra_text_is_insufficient(mock_generate):
+    mock_generate.return_value = (
+        "The provided documents do not contain enough information to answer this question. "
+        "The excerpt [Source 1] discusses query parameters."
+    )
+    result = answer_question("What is AI?", retriever_with_one_chunk())
+    assert result["status"] == "insufficient_context"

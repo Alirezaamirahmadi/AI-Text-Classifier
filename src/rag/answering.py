@@ -124,7 +124,8 @@ def answer_question(
             usable_results,
         )
 
-    if generated.strip().strip('"') == ABSTENTION:
+    # اگر مدل جمله‌ی استاندارد را نوشته، حتی با متن اضافه، یعنی اطلاعات کافی نیست.
+    if "do not contain enough information" in generated.lower():
         return _failure(ABSTENTION, "insufficient_context", usable_results)
 
     source_numbers = set(extract_source_numbers(generated))

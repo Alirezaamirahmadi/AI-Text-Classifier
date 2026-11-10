@@ -1,0 +1,24 @@
+{
+  "note": "فقط اجراهای واقعی؛ مدل دوم بنچمارک نشده است.",
+  "inputs": [
+    {
+      "file": "rag_baseline_before.json",
+      "status_counts": {
+        "insufficient_context": 34,
+        "uncited": 29,
+        "answered": 14,
+        "generation_unavailable": 1
+      }
+    },
+    {
+      "file": "rag_evaluation_results.json",
+      "status_counts": {
+        "insufficient_context": 36,
+        "uncited": 26,
+        "invalid_generation": 12,
+        "answered": 3,
+        "generation_unavailable": 1
+      }
+    }
+  ]
+}

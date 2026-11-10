@@ -1,0 +1,341 @@
+{
+  "failures_count": 42,
+  "failures": [
+    {
+      "id": "RAG-001",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How do I declare a path parameter in FastAPI?",
+      "stage": "Generation/Context",
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-002",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How do I define query parameters with default values?",
+      "stage": "Generation/Context",
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-003",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How do I receive a JSON request body using a Pydantic model?",
+      "stage": "Generation/Context",
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-004",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How can I use a response model to filter returned fields?",
+      "stage": "Generation/Context",
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-005",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How do I upload a file in a FastAPI endpoint?",
+      "stage": "Generation/Context",
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-006",
+      "answerable": true,
+      "status": "uncited",
+      "question": "How should I raise an HTTP error when a resource is missing?",
+      "stage": "Generation/Context",
+      "answer": "The answer could not be verified against a cited source, so it has been withheld."
+    },
+    {
+      "id": "RAG-007",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How do shared dependencies work across endpoints?",
+      "stage": "Generation/Context",
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-008",
+      "answerable": true,
+      "status": "uncited",
+      "question": "How do I add OAuth2 password bearer authentication?",
+      "stage": "Generation/Context",
+      "answer": "The answer could not be verified against a cited source, so it has been withheld."
+    },
+    {
+      "id": "RAG-009",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How do I run a task after returning a response?",
+      "stage": "Generation/Context",
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-010",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How do I configure CORS for a frontend?",
+      "stage": "Generation/Context",
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-011",
+      "answerable": true,
+      "status": "invalid_generation",
+      "question": "How do I connect a FastAPI app to a SQL database?",
+      "stage": "Generation/Context",
+      "answer": "The generated response could not be verified. Please try again."
+    },
+    {
+      "id": "RAG-012",
+      "answerable": true,
+      "status": "invalid_generation",
+      "question": "How do I test FastAPI endpoints using TestClient?",
+      "stage": "Generation/Context",
+      "answer": "The generated response could not be verified. Please try again."
+    },
+    {
+      "id": "RAG-013",
+      "answerable": true,
+      "status": "invalid_generation",
+      "question": "How do I register custom middleware?",
+      "stage": "Generation/Context",
+      "answer": "The generated response could not be verified. Please try again."
+    },
+    {
+      "id": "RAG-014",
+      "answerable": true,
+      "status": "invalid_generation",
+      "question": "How do I create a WebSocket endpoint?",
+      "stage": "Generation/Context",
+      "answer": "The generated response could not be verified. Please try again."
+    },
+    {
+      "id": "RAG-015",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How do I use application startup and shutdown events?",
+      "stage": "Generation/Context",
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-016",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How do I add tags and metadata to OpenAPI docs?",
+      "stage": "Generation/Context",
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-017",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How do I serve static files?",
+      "stage": "Generation/Context",
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-019",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How can middleware process both requests and responses?",
+      "stage": "Generation/Context",
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-020",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How do I declare an integer path parameter?",
+      "stage": "Generation/Context",
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-021",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "What happens if a path parameter declared as int receives text?",
+      "stage": "Generation/Context",
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-022",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How can a query parameter be optional?",
+      "stage": "Generation/Context",
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-023",
+      "answerable": true,
+      "status": "uncited",
+      "question": "Why use a Pydantic model for a request body?",
+      "stage": "Generation/Context",
+      "answer": "The answer could not be verified against a cited source, so it has been withheld."
+    },
+    {
+      "id": "RAG-024",
+      "answerable": true,
+      "status": "uncited",
+      "question": "What does response_model do beyond documenting output?",
+      "stage": "Generation/Context",
+      "answer": "The answer could not be verified against a cited source, so it has been withheld."
+    },
+    {
+      "id": "RAG-025",
+      "answerable": true,
+      "status": "invalid_generation",
+      "question": "Can BackgroundTasks execute work after the response?",
+      "stage": "Generation/Context",
+      "answer": "The generated response could not be verified. Please try again."
+    },
+    {
+      "id": "RAG-026",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "What does CORSMiddleware configure?",
+      "stage": "Generation/Context",
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-027",
+      "answerable": true,
+      "status": "invalid_generation",
+      "question": "What is the role of Depends in FastAPI?",
+      "stage": "Generation/Context",
+      "answer": "The generated response could not be verified. Please try again."
+    },
+    {
+      "id": "RAG-028",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How do I send a message over a WebSocket?",
+      "stage": "Generation/Context",
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-029",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How do I handle invalid request data?",
+      "stage": "Generation/Context",
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-030",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How do I write an endpoint that accepts an uploaded file and metadata?",
+      "stage": "Generation/Context",
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-031",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How can I validate input and restrict the shape of output in one endpoint?",
+      "stage": "Generation/Context",
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-032",
+      "answerable": true,
+      "status": "uncited",
+      "question": "How would I test an endpoint that uses dependencies and returns a response model?",
+      "stage": "Generation/Context",
+      "answer": "The answer could not be verified against a cited source, so it has been withheld."
+    },
+    {
+      "id": "RAG-033",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How can authentication and dependency injection work together?",
+      "stage": "Generation/Context",
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-034",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How can middleware and CORS both affect an API request?",
+      "stage": "Generation/Context",
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-035",
+      "answerable": true,
+      "status": "invalid_generation",
+      "question": "How do database lifecycle management and background tasks differ?",
+      "stage": "Generation/Context",
+      "answer": "The generated response could not be verified. Please try again."
+    },
+    {
+      "id": "RAG-036",
+      "answerable": true,
+      "status": "uncited",
+      "question": "How do OpenAPI metadata and response models improve API contracts?",
+      "stage": "Generation/Context",
+      "answer": "The answer could not be verified against a cited source, so it has been withheld."
+    },
+    {
+      "id": "RAG-037",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How can file uploads be tested?",
+      "stage": "Generation/Context",
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-038",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How do path and query parameters differ?",
+      "stage": "Generation/Context",
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-039",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How can a WebSocket endpoint manage connection and application resources?",
+      "stage": "Generation/Context",
+      "answer": "The provided documents do not contain enough information to answer this question."
+    },
+    {
+      "id": "RAG-040",
+      "answerable": true,
+      "status": "uncited",
+      "question": "How do request validation and error responses fit together?",
+      "stage": "Generation/Context",
+      "answer": "The answer could not be verified against a cited source, so it has been withheld."
+    },
+    {
+      "id": "RAG-054",
+      "answerable": false,
+      "status": "generation_unavailable",
+      "question": "What is the current production API key?",
+      "stage": "Provider/Infrastructure",
+      "answer": "Answer generation is temporarily unavailable. Please try again later."
+    },
+    {
+      "id": "RAG-055",
+      "answerable": false,
+      "status": "answered",
+      "question": "What exact version of the operating system runs in production?",
+      "stage": "Validation",
+      "answer": "[Source 1] Microsoft, \"Some of them are getting integrated into the core Windows product and some Office products.\"  \n[Source 2] Kabir Khan, \"We adopted the FastAPI library to spawn a REST server that can be queried to obtain predictions.\"  \n[Source 3] Piero Molino, Yaroslav Dudin, and Sai Sumanth M"
+    },
+    {
+      "id": "RAG-071",
+      "answerable": false,
+      "status": "answered",
+      "question": "How do I deploy this application to Kubernetes with Helm?",
+      "stage": "Validation",
+      "answer": "[Source 1] FastAPI Cloud is the primary sponsor and funding provider for the *FastAPI and friends* open source projects. ✨\n\n[Source 2] FastAPI Cloud is built by the same author and team behind **FastAPI**. 🎉\n\n[Source 3] FastAPI is open source and based on standards. You can deploy FastAPI apps to an"
+    }
+  ]
+}
