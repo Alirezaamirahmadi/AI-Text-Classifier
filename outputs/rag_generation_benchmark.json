@@ -1,17 +1,17 @@
 {
-  "note": "فقط اجراهای واقعی؛ مدل دوم بنچمارک نشده است.",
-  "inputs": [
+  "note": "دو مدل محلی با همان Dataset (۷۸ سؤال)، همان Retrieval و تنظیمات. مدل ابری اجرا نشده است.",
+  "settings": {
+    "index": "data/rag_index/strategy_800_150",
+    "top_k": 5,
+    "max_context_chars": 10000,
+    "max_tokens": 2048,
+    "temperature": 0
+  },
+  "models": [
     {
-      "file": "rag_baseline_before.json",
-      "status_counts": {
-        "insufficient_context": 34,
-        "uncited": 29,
-        "answered": 14,
-        "generation_unavailable": 1
-      }
-    },
-    {
-      "file": "rag_evaluation_results.json",
+      "name": "Qwen2.5-0.5B-Instruct (Q4_K_S)",
+      "port": 8081,
+      "input": "rag_run_qwen05b.json",
       "status_counts": {
         "insufficient_context": 36,
         "uncited": 26,
@@ -19,6 +19,32 @@
         "answered": 3,
         "generation_unavailable": 1
       }
+    },
+    {
+      "name": "Qwen2.5-3B-Instruct (Q4_K_M)",
+      "port": 8082,
+      "input": "rag_run_qwen3b.json",
+      "status_counts": {
+        "insufficient_context": 42,
+        "uncited": 29,
+        "answered": 4,
+        "invalid_generation": 2,
+        "generation_unavailable": 1
+      }
     }
-  ]
+  ],
+  "manual_checks": {
+    "answered_3b": {
+      "correct": 1,
+      "partial": 2,
+      "wrong": 1,
+      "note": "بررسی دستی ۴ پاسخ"
+    },
+    "uncited_3b": {
+      "checked": 27,
+      "correct_but_uncited_approx": 9,
+      "partial_or_wrong_approx": 17,
+      "note": "بررسی دستی بر اساس متن جواب؛ تقریبی و بدون Context کامل"
+    }
+  }
 }

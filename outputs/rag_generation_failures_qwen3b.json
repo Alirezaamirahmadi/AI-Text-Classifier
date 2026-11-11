@@ -1,0 +1,718 @@
+{
+  "model": "Qwen2.5-3B-Instruct (Q4_K_M)",
+  "input": "rag_run_qwen3b.json",
+  "failures_count": 37,
+  "failures": [
+    {
+      "id": "RAG-001",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How do I declare a path parameter in FastAPI?",
+      "reference_answer": "Declare it in the route path using braces, then accept it as a function parameter; type annotations enable conversion and validation.",
+      "expected_sources": [
+        "tutorial_path_params.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_query_params.md",
+        "tutorial_path_params.md",
+        "tutorial_static_files.md",
+        "tutorial_dependencies.md",
+        "tutorial_first_steps.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-002",
+      "answerable": true,
+      "status": "uncited",
+      "question": "How do I define query parameters with default values?",
+      "reference_answer": "Declare function parameters not included in the path; default values make them optional.",
+      "expected_sources": [
+        "tutorial_query_params.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_query_params.md",
+        "tutorial_query_params.md",
+        "tutorial_query_params.md",
+        "tutorial_query_params.md",
+        "tutorial_query_params.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-003",
+      "answerable": true,
+      "status": "uncited",
+      "question": "How do I receive a JSON request body using a Pydantic model?",
+      "reference_answer": "Define a Pydantic model and use it as an endpoint function parameter; FastAPI parses and validates the request body.",
+      "expected_sources": [
+        "tutorial_body.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_body.md",
+        "tutorial_body.md",
+        "tutorial_body.md",
+        "tutorial_body.md",
+        "tutorial_response_model.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-004",
+      "answerable": true,
+      "status": "uncited",
+      "question": "How can I use a response model to filter returned fields?",
+      "reference_answer": "Set response_model on the route; FastAPI validates output and filters it to the declared model.",
+      "expected_sources": [
+        "tutorial_response_model.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_response_model.md",
+        "tutorial_response_model.md",
+        "tutorial_response_model.md",
+        "tutorial_response_model.md",
+        "tutorial_response_model.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-006",
+      "answerable": true,
+      "status": "uncited",
+      "question": "How should I raise an HTTP error when a resource is missing?",
+      "reference_answer": "Raise HTTPException with an appropriate status code and detail.",
+      "expected_sources": [
+        "tutorial_handling_errors.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_handling_errors.md",
+        "tutorial_handling_errors.md",
+        "tutorial_handling_errors.md",
+        "tutorial_handling_errors.md",
+        "tutorial_handling_errors.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-007",
+      "answerable": true,
+      "status": "uncited",
+      "question": "How do shared dependencies work across endpoints?",
+      "reference_answer": "Declare dependencies with Depends; FastAPI resolves them and can reuse the same dependency across endpoints.",
+      "expected_sources": [
+        "tutorial_dependencies.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_dependencies.md",
+        "tutorial_dependencies.md",
+        "tutorial_dependencies.md",
+        "tutorial_dependencies.md",
+        "tutorial_middleware.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-008",
+      "answerable": true,
+      "status": "uncited",
+      "question": "How do I add OAuth2 password bearer authentication?",
+      "reference_answer": "Use OAuth2PasswordBearer to extract the bearer token, then validate the token in application logic.",
+      "expected_sources": [
+        "tutorial_security.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_security.md",
+        "tutorial_security.md",
+        "tutorial_security.md",
+        "tutorial_security.md",
+        "tutorial_security.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-009",
+      "answerable": true,
+      "status": "uncited",
+      "question": "How do I run a task after returning a response?",
+      "reference_answer": "Accept BackgroundTasks and add a task with add_task so it runs after the response is sent.",
+      "expected_sources": [
+        "tutorial_background_tasks.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_background_tasks.md",
+        "tutorial_middleware.md",
+        "tutorial_background_tasks.md",
+        "tutorial_background_tasks.md",
+        "tutorial_middleware.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-010",
+      "answerable": true,
+      "status": "uncited",
+      "question": "How do I configure CORS for a frontend?",
+      "reference_answer": "Add CORSMiddleware and configure allowed origins, methods, and headers.",
+      "expected_sources": [
+        "tutorial_cors.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_cors.md",
+        "tutorial_cors.md",
+        "tutorial_cors.md",
+        "tutorial_cors.md",
+        "advanced_middleware.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-011",
+      "answerable": true,
+      "status": "uncited",
+      "question": "How do I connect a FastAPI app to a SQL database?",
+      "reference_answer": "Create a database session/connection using the documented database integration and manage its lifecycle through dependencies.",
+      "expected_sources": [
+        "tutorial_sql_databases.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_sql_databases.md",
+        "tutorial_sql_databases.md",
+        "tutorial_sql_databases.md",
+        "tutorial_first_steps.md",
+        "tutorial_sql_databases.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-012",
+      "answerable": true,
+      "status": "uncited",
+      "question": "How do I test FastAPI endpoints using TestClient?",
+      "reference_answer": "Use TestClient with the application and send requests in tests, then assert response status and content.",
+      "expected_sources": [
+        "tutorial_testing.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_testing.md",
+        "tutorial_first_steps.md",
+        "tutorial_first_steps.md",
+        "tutorial_testing.md",
+        "tutorial_first_steps.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-014",
+      "answerable": true,
+      "status": "uncited",
+      "question": "How do I create a WebSocket endpoint?",
+      "reference_answer": "Declare a route with app.websocket, accept the connection, and send/receive messages through the WebSocket object.",
+      "expected_sources": [
+        "tutorial_websockets.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_websockets.md",
+        "tutorial_websockets.md",
+        "tutorial_websockets.md",
+        "tutorial_websockets.md",
+        "tutorial_websockets.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-015",
+      "answerable": true,
+      "status": "uncited",
+      "question": "How do I use application startup and shutdown events?",
+      "reference_answer": "Use the documented lifespan mechanism or startup/shutdown event handlers to manage application resources.",
+      "expected_sources": [
+        "tutorial_events.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_events.md",
+        "tutorial_events.md",
+        "tutorial_events.md",
+        "tutorial_events.md",
+        "tutorial_events.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-017",
+      "answerable": true,
+      "status": "uncited",
+      "question": "How do I serve static files?",
+      "reference_answer": "Mount StaticFiles at a path and point it to the directory to serve.",
+      "expected_sources": [
+        "tutorial_static_files.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_static_files.md",
+        "tutorial_static_files.md",
+        "tutorial_static_files.md",
+        "tutorial_request_files.md",
+        "tutorial_request_files.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-018",
+      "answerable": true,
+      "status": "uncited",
+      "question": "What is FastAPI and what are its main features?",
+      "reference_answer": "FastAPI is a Python framework for building APIs with type-hint-based validation and automatic interactive API documentation.",
+      "expected_sources": [
+        "index.md"
+      ],
+      "retrieved_sources": [
+        "index.md",
+        "tutorial_path_params.md",
+        "index.md",
+        "tutorial_first_steps.md",
+        "tutorial_first_steps.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-019",
+      "answerable": true,
+      "status": "uncited",
+      "question": "How can middleware process both requests and responses?",
+      "reference_answer": "Middleware can inspect or modify a request before passing it onward and inspect or modify the response before returning it.",
+      "expected_sources": [
+        "advanced_middleware.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_middleware.md",
+        "tutorial_middleware.md",
+        "tutorial_middleware.md",
+        "tutorial_cors.md",
+        "tutorial_cors.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-020",
+      "answerable": true,
+      "status": "invalid_generation",
+      "question": "How do I declare an integer path parameter?",
+      "reference_answer": "Annotate the endpoint parameter as int; FastAPI converts and validates the path value.",
+      "expected_sources": [
+        "tutorial_path_params.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_query_params.md",
+        "tutorial_path_params.md",
+        "tutorial_path_params.md",
+        "tutorial_path_params.md",
+        "tutorial_path_params.md"
+      ],
+      "answer": "The generated response could not be verified. Please try again.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-021",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "What happens if a path parameter declared as int receives text?",
+      "reference_answer": "FastAPI returns a validation error because the value cannot be parsed as an integer.",
+      "expected_sources": [
+        "tutorial_path_params.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_query_params.md",
+        "tutorial_path_params.md",
+        "tutorial_path_params.md",
+        "tutorial_query_params.md",
+        "tutorial_dependencies.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-022",
+      "answerable": true,
+      "status": "uncited",
+      "question": "How can a query parameter be optional?",
+      "reference_answer": "Give the function parameter a default value, commonly None, so the client may omit it.",
+      "expected_sources": [
+        "tutorial_query_params.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_query_params.md",
+        "tutorial_query_params.md",
+        "tutorial_query_params.md",
+        "tutorial_query_params.md",
+        "tutorial_query_params.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-023",
+      "answerable": true,
+      "status": "uncited",
+      "question": "Why use a Pydantic model for a request body?",
+      "reference_answer": "It describes the expected body shape and allows FastAPI to parse and validate incoming data.",
+      "expected_sources": [
+        "tutorial_body.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_body.md",
+        "tutorial_body.md",
+        "tutorial_body.md",
+        "tutorial_body.md",
+        "tutorial_response_model.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-024",
+      "answerable": true,
+      "status": "uncited",
+      "question": "What does response_model do beyond documenting output?",
+      "reference_answer": "It validates the returned data and filters output to the declared schema.",
+      "expected_sources": [
+        "tutorial_response_model.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_response_model.md",
+        "tutorial_response_model.md",
+        "tutorial_response_model.md",
+        "tutorial_response_model.md",
+        "tutorial_response_model.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-025",
+      "answerable": true,
+      "status": "uncited",
+      "question": "Can BackgroundTasks execute work after the response?",
+      "reference_answer": "Yes. Register the callable with BackgroundTasks.add_task; it runs after the response is sent.",
+      "expected_sources": [
+        "tutorial_background_tasks.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_background_tasks.md",
+        "tutorial_background_tasks.md",
+        "tutorial_background_tasks.md",
+        "tutorial_background_tasks.md",
+        "tutorial_background_tasks.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-026",
+      "answerable": true,
+      "status": "uncited",
+      "question": "What does CORSMiddleware configure?",
+      "reference_answer": "It controls cross-origin access according to configured origins and related CORS settings.",
+      "expected_sources": [
+        "tutorial_cors.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_cors.md",
+        "tutorial_cors.md",
+        "advanced_middleware.md",
+        "tutorial_cors.md",
+        "tutorial_cors.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-027",
+      "answerable": true,
+      "status": "uncited",
+      "question": "What is the role of Depends in FastAPI?",
+      "reference_answer": "Depends declares a dependency that FastAPI resolves and injects into the endpoint or another dependency.",
+      "expected_sources": [
+        "tutorial_dependencies.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_dependencies.md",
+        "tutorial_dependencies.md",
+        "tutorial_dependencies.md",
+        "tutorial_security.md",
+        "tutorial_dependencies.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-028",
+      "answerable": true,
+      "status": "uncited",
+      "question": "How do I send a message over a WebSocket?",
+      "reference_answer": "After accepting the connection, use the WebSocket send methods; receive methods can read client messages.",
+      "expected_sources": [
+        "tutorial_websockets.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_websockets.md",
+        "tutorial_websockets.md",
+        "tutorial_websockets.md",
+        "tutorial_websockets.md",
+        "tutorial_websockets.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-029",
+      "answerable": true,
+      "status": "uncited",
+      "question": "How do I handle invalid request data?",
+      "reference_answer": "FastAPI validates typed parameters and returns a validation error when a value cannot be converted to the declared type.",
+      "expected_sources": [
+        "tutorial_path_params.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_handling_errors.md",
+        "tutorial_handling_errors.md",
+        "tutorial_handling_errors.md",
+        "tutorial_handling_errors.md",
+        "tutorial_handling_errors.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-030",
+      "answerable": true,
+      "status": "uncited",
+      "question": "How do I write an endpoint that accepts an uploaded file and metadata?",
+      "reference_answer": "Use the documented file/form parameter types for multipart form data; exact combinations should follow the file-upload guidance.",
+      "expected_sources": [
+        "tutorial_request_files.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_request_files.md",
+        "tutorial_request_files.md",
+        "tutorial_request_files.md",
+        "tutorial_request_files.md",
+        "tutorial_request_files.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-031",
+      "answerable": true,
+      "status": "uncited",
+      "question": "How can I validate input and restrict the shape of output in one endpoint?",
+      "reference_answer": "Use a Pydantic request model for input validation and response_model for output validation/filtering.",
+      "expected_sources": [
+        "tutorial_body.md",
+        "tutorial_response_model.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_response_model.md",
+        "tutorial_response_model.md",
+        "tutorial_response_model.md",
+        "tutorial_response_model.md",
+        "tutorial_response_model.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-032",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How would I test an endpoint that uses dependencies and returns a response model?",
+      "reference_answer": "Use TestClient for the request, configure or override dependencies as needed, and assert the response schema/content.",
+      "expected_sources": [
+        "tutorial_dependencies.md",
+        "tutorial_testing.md",
+        "tutorial_response_model.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_response_model.md",
+        "tutorial_response_model.md",
+        "tutorial_response_model.md",
+        "tutorial_response_model.md",
+        "tutorial_events.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-033",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How can authentication and dependency injection work together?",
+      "reference_answer": "Authentication helpers can be declared as dependencies and resolved using Depends in endpoint logic.",
+      "expected_sources": [
+        "tutorial_security.md",
+        "tutorial_dependencies.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_dependencies.md",
+        "tutorial_dependencies.md",
+        "tutorial_dependencies.md",
+        "tutorial_security.md",
+        "tutorial_security.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-034",
+      "answerable": true,
+      "status": "uncited",
+      "question": "How can middleware and CORS both affect an API request?",
+      "reference_answer": "General middleware processes requests/responses; CORSMiddleware handles cross-origin policy based on its configuration.",
+      "expected_sources": [
+        "tutorial_middleware.md",
+        "tutorial_cors.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_cors.md",
+        "tutorial_cors.md",
+        "tutorial_middleware.md",
+        "tutorial_cors.md",
+        "advanced_middleware.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-035",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How do database lifecycle management and background tasks differ?",
+      "reference_answer": "Database sessions/connections need lifecycle management; BackgroundTasks schedules work after sending the response.",
+      "expected_sources": [
+        "tutorial_sql_databases.md",
+        "tutorial_background_tasks.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_background_tasks.md",
+        "tutorial_events.md",
+        "tutorial_background_tasks.md",
+        "tutorial_middleware.md",
+        "tutorial_sql_databases.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-037",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How can file uploads be tested?",
+      "reference_answer": "Send a multipart file with TestClient and assert the endpoint response.",
+      "expected_sources": [
+        "tutorial_request_files.md",
+        "tutorial_testing.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_request_files.md",
+        "tutorial_request_files.md",
+        "tutorial_request_files.md",
+        "tutorial_request_files.md",
+        "tutorial_request_files.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-038",
+      "answerable": true,
+      "status": "uncited",
+      "question": "How do path and query parameters differ?",
+      "reference_answer": "Path parameters are embedded in the route path; query parameters are function parameters absent from the path and can have defaults.",
+      "expected_sources": [
+        "tutorial_path_params.md",
+        "tutorial_query_params.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_query_params.md",
+        "tutorial_query_params.md",
+        "tutorial_query_params.md",
+        "tutorial_query_params.md",
+        "tutorial_first_steps.md"
+      ],
+      "answer": "The answer could not be verified against a cited source, so it has been withheld.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-039",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How can a WebSocket endpoint manage connection and application resources?",
+      "reference_answer": "Accept and communicate over the WebSocket; manage app-wide resources with lifespan/startup/shutdown mechanisms.",
+      "expected_sources": [
+        "tutorial_websockets.md",
+        "tutorial_events.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_websockets.md",
+        "tutorial_websockets.md",
+        "tutorial_websockets.md",
+        "tutorial_websockets.md",
+        "tutorial_websockets.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-040",
+      "answerable": true,
+      "status": "insufficient_context",
+      "question": "How do request validation and error responses fit together?",
+      "reference_answer": "FastAPI validates typed/model inputs; application code can raise HTTPException for application-level errors.",
+      "expected_sources": [
+        "tutorial_body.md",
+        "tutorial_handling_errors.md"
+      ],
+      "retrieved_sources": [
+        "tutorial_handling_errors.md",
+        "tutorial_handling_errors.md",
+        "tutorial_handling_errors.md",
+        "tutorial_handling_errors.md",
+        "tutorial_handling_errors.md"
+      ],
+      "answer": "The provided documents do not contain enough information to answer this question.",
+      "stage": "Generation/Context"
+    },
+    {
+      "id": "RAG-076",
+      "answerable": false,
+      "status": "generation_unavailable",
+      "question": "What exact security vulnerability CVE affects this project?",
+      "reference_answer": "No project-specific vulnerability audit or CVE report is provided.",
+      "expected_sources": [],
+      "retrieved_sources": [
+        "tutorial_sql_databases.md",
+        "tutorial_sql_databases.md",
+        "index.md",
+        "index.md",
+        "tutorial_security.md"
+      ],
+      "answer": "Answer generation is temporarily unavailable. Please try again later.",
+      "stage": "Provider/Infrastructure"
+    }
+  ]
+}
