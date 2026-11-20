@@ -1,0 +1,34 @@
+{
+  "retrieval": {
+    "status": "measured",
+    "source": "Stage 8 run (40 answerable cases, strategy_800_150, top_k=5)",
+    "recall_at_1": 0.7458,
+    "recall_at_3": 0.8458,
+    "recall_at_5": 0.8708,
+    "mrr": 0.9125,
+    "precision_at_k": "not_measured"
+  },
+  "generation": {
+    "answer_correctness": "not_measured",
+    "faithfulness": "not_measured",
+    "citation_support": "not_measured",
+    "answer_relevancy": "not_measured",
+    "abstention_quality_semantic": "not_measured",
+    "status_counts_qwen05b": {
+      "answered": 3,
+      "invalid_generation": 12,
+      "insufficient_context": 36,
+      "uncited": 26,
+      "generation_unavailable": 1
+    },
+    "status_counts_qwen3b": {
+      "answered": 4,
+      "invalid_generation": 2,
+      "insufficient_context": 42,
+      "uncited": 29,
+      "generation_unavailable": 1
+    },
+    "manual_review": "4 answered (3B): 1 correct, 2 partial, 1 wrong; uncited (3B, 27 checked): approx 9 correct but uncited, approx 17 partial or wrong"
+  },
+  "note": "Lexical checks are not semantic evaluation."
+}

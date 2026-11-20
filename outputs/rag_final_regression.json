@@ -1,0 +1,19 @@
+{
+  "status": "partially_verified",
+  "runner": "stub pytest runner in sandbox (not the real pytest)",
+  "pure_python_tests": {
+    "passed": 77,
+    "failed": 0,
+    "not_run": 2,
+    "not_run_reason": "parametrized tests need real pytest; they passed in the real run on the author's laptop before"
+  },
+  "stability_tests": {
+    "file": "tests/test_rag_stability.py",
+    "passed": 7,
+    "failed": 0
+  },
+  "real_pytest_on_laptop": {
+    "last_reported": "135 passed (Stage 9)"
+  },
+  "api_and_integration_tests": "not_run_in_sandbox (need fastapi/httpx and real index)"
+}

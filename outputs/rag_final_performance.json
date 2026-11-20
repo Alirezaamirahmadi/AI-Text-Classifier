@@ -1,0 +1,17 @@
+{
+  "model": "qwen2.5-3b",
+  "base_url": "http://127.0.0.1:8082/v1/chat/completions",
+  "cases": 78,
+  "average_latency_s": 23.237,
+  "p95_latency_s": 27.169,
+  "token_usage": "not_measured",
+  "status_counts": {
+    "uncited": 26,
+    "generation_unavailable": 4,
+    "insufficient_context": 42,
+    "invalid_generation": 2,
+    "answered": 4
+  },
+  "provider_errors": 4,
+  "note": "One measured run on the author's laptop with the local 3B model. Single run, no repeats."
+}

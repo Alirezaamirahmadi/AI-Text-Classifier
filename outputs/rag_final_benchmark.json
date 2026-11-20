@@ -1,0 +1,6 @@
+{
+  "status": "measured_from_saved_runs",
+  "see": "outputs/rag_generation_benchmark.json (Stage 9)",
+  "models": 2,
+  "note": "No new benchmark run was made in Stage 11."
+}
