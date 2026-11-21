@@ -1,0 +1,13 @@
+{
+  "run": "repeat_1",
+  "model": "qwen2.5-3b",
+  "average_latency_s": 78.301,
+  "p95_latency_s": 39.758,
+  "status_counts": {
+    "uncited": 27,
+    "invalid_generation": 2,
+    "generation_unavailable": 5,
+    "answered": 4,
+    "insufficient_context": 40
+  }
+}

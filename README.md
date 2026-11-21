@@ -1002,6 +1002,13 @@ $env:HF_HUB_OFFLINE = "1"
 - **اجرای ارزیابی:** `python -m scripts.run_eval_simple` (نیاز به سرور مدل روی پورت 8081 و تنظیم `LLM_BASE_URL`).
 - **تکرارپذیری:** دو اجرا با یک تنظیم؛ ۷۲ از ۷۸ سؤال ثابت ماندند و ۶ سؤال تغییر کردند.
 
+## وضعیت مرحله‌ی تثبیت RAG
+
+- **وضعیت:** PARTIALLY_READY
+- **جزئیات معماری، تست‌ها و محدودیت‌ها:** `reports/RAG_FINAL_TECHNICAL_REPORT.md`
+- **اجرای تست‌ها:** `python -m pytest -q` (انتظار: همه قبول)
+- **وابستگی‌ها:** `requirements.txt` (نسخه‌های پین‌شده)
+- **BLOCKED / not_measured:** تست زنده‌ی Timeout، پاسخ Malformed، قطع Embedding Provider، سند تکراری، Prompt Injection واقعی، داور معنایی (Correctness، Faithfulness، Citation Support)، و Token Usage.
 ---
 
 ## References
@@ -1010,3 +1017,4 @@ $env:HF_HUB_OFFLINE = "1"
 - کتابخانه‌ها: [scikit-learn](https://scikit-learn.org/stable/documentation.html) (`TfidfVectorizer`, `LogisticRegression`, `Pipeline`)، [FastAPI](https://fastapi.tiangolo.com/)، [Pydantic](https://docs.pydantic.dev/)، [joblib](https://joblib.readthedocs.io/)، [pytest](https://docs.pytest.org/)
 - Transformer: [Hugging Face Transformers](https://huggingface.co/docs/transformers/)، [DistilBERT](https://huggingface.co/distilbert/distilbert-base-uncased)
 - PyTorch: [PyTorch Documentation](https://pytorch.org/docs/stable/)
+
