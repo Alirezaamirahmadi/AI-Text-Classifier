@@ -14,6 +14,10 @@ class GenerationError(RuntimeError):
     """Represent a failure while requesting or parsing a generated answer."""
 
 
+# آخرین مقدار usage که سرویس مدل برگردانده (برای اندازه‌گیری توکن).
+LAST_USAGE = {}
+
+
 def generate_answer(
     question: str,
     context: str,
@@ -82,6 +86,8 @@ Keep the answer concise, with citations next to supported claims.
         )
         response.raise_for_status()
         payload: dict[str, Any] = response.json()
+        LAST_USAGE.clear()
+        LAST_USAGE.update(payload.get("usage") or {})
 
         # پاسخ استاندارد سرویس باید دست‌کم یک گزینه تولیدشده داشته باشد.
         choices = payload.get("choices") or []

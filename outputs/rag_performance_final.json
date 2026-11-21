@@ -1,0 +1,16 @@
+{
+  "run": "final_token",
+  "model": "qwen2.5-3b",
+  "base_url": "http://127.0.0.1:8082/v1/chat/completions",
+  "cases": 78,
+  "average_latency_s": 3.056,
+  "p95_latency_s": 5.676,
+  "prompt_tokens_total": 110679,
+  "completion_tokens_total": 2373,
+  "status_counts": {
+    "insufficient_context": 42,
+    "uncited": 28,
+    "answered": 6,
+    "invalid_generation": 2
+  }
+}

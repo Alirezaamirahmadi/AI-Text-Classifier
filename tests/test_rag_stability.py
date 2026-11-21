@@ -67,3 +67,36 @@ def test_multipart_question_keeps_all_sources():
         result = answer_question("Path and query parameters?", retriever_with(chunks))
     assert result["status"] == "answered"
     assert [c["source_number"] for c in result["citations"]] == [1, 2]
+
+
+def test_retrieval_failure_is_controlled_status():
+    # خطای بازیابی (مثلاً Embedding) نباید برنامه را متوقف کند.
+    broken = Mock()
+    broken.retrieve.side_effect = RuntimeError("embedding provider down")
+    result = answer_question("What is AI?", broken)
+    assert result["status"] == "retrieval_unavailable"
+    assert result["citations"] == []
+
+
+def test_duplicate_chunks_are_not_repeated_in_context():
+    dup = [chunk("Same text here.", chunk_id="a"), chunk("Same text here.", chunk_id="b")]
+    with patch("src.rag.answering.generate_answer") as gen:
+        gen.return_value = "Same text here [Source 1]."
+        answer_question("What is AI?", retriever_with(dup))
+    context = gen.call_args.kwargs["context"]
+    assert context.count("Same text here.") == 1
+
+
+def test_provider_usage_is_stored_for_measurement():
+    from src.rag import generation as g
+    import json as _json
+    from unittest.mock import Mock as _M
+    response = _M()
+    response.json.return_value = {"choices": [{"message": {"content": "ok [Source 1]"}}],
+                                  "usage": {"prompt_tokens": 10, "completion_tokens": 5}}
+    response.raise_for_status.return_value = None
+    with patch("src.rag.generation.httpx.post", return_value=response):
+        import os
+        os.environ["OPENROUTER_API_KEY"] = "test-key"
+        g.generate_answer("q", "[Source 1] text")
+    assert g.LAST_USAGE.get("completion_tokens") == 5

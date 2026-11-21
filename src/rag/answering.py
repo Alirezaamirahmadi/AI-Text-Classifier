@@ -55,11 +55,27 @@ def answer_question(
     if max_context_chars <= 0:
         raise ValueError("max_context_chars must be greater than zero")
 
-    results = retriever.retrieve(question, top_k=top_k)
-    usable_results = [
-        item for item in results
-        if isinstance(item.get("text"), str) and item["text"].strip()
-    ]
+    # اگر بازیابی (مثلاً Embedding) خطا داد، برنامه کرش نمی‌کند.
+    try:
+        results = retriever.retrieve(question, top_k=top_k)
+    except Exception:
+        return _failure(
+            "Retrieval is temporarily unavailable. Please try again later.",
+            "retrieval_unavailable",
+            [],
+        )
+
+    # حذف قطعه‌های تکراری (متن یکسان) تا یک سند دوبار وارد Context نشود.
+    usable_results = []
+    seen_texts = set()
+    for item in results:
+        text = item.get("text")
+        if not isinstance(text, str) or not text.strip():
+            continue
+        if text in seen_texts:
+            continue
+        seen_texts.add(text)
+        usable_results.append(item)
     if not usable_results:
         return _failure(
             "The available documents do not contain enough information to answer this question.",
