@@ -22,7 +22,7 @@ def generate_answer(
     question: str,
     context: str,
     model: str | None = None,
-    timeout: float = 30.0,
+    timeout: float = 180.0,
 ) -> str:
     """Generate an answer grounded only in the supplied document context."""
     # کلید API از متغیر محیطی خوانده می‌شود تا در کد منبع ذخیره نشود.
