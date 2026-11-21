@@ -1,6 +1,119 @@
 {
-  "status": "measured_from_saved_runs",
-  "see": "outputs/rag_generation_benchmark.json (Stage 9)",
-  "models": 2,
-  "note": "No new benchmark run was made in Stage 11."
+  "status": "historical_runs_reconciled_not_fresh_end_to_end_run",
+  "generated_at_utc": "2026-11-21T08:01:21.677664+00:00",
+  "repository_head_at_report_generation": "314e0dafbbb6cf0dfa9f72916b795986495e5633",
+  "dataset_cases": 78,
+  "retrieval": {
+    "status": "measured_from_saved_execution",
+    "source_file": "outputs/rag_evaluation_results.json",
+    "source_run_metadata": {
+      "run_time_utc": "2026-11-10T22:38:57.357592+00:00",
+      "git_commit": "7190a852c6bd1cd2bfea047791512a9f6a5f5ac6",
+      "index_dir": "data/rag_index/strategy_800_150",
+      "top_k": 5,
+      "max_context_chars": 10000,
+      "max_tokens": 2048,
+      "llm_base_url": "http://127.0.0.1:8082/v1/chat/completions",
+      "llm_model": "qwen2.5-3b",
+      "dataset_cases": 78,
+      "dataset_version": "1.0"
+    },
+    "answerable_cases": 40,
+    "metrics": {
+      "recall_at_1": 0.875,
+      "precision_at_1": 0.875,
+      "recall_at_3": 0.95,
+      "precision_at_3": 0.8417,
+      "recall_at_5": 0.95,
+      "precision_at_5": 0.76,
+      "mrr": 0.9125
+    },
+    "metric_definition": "Recall@K is query hit-rate: at least one expected source appears in top K. Precision@K is relevant retrieved sources divided by K, averaged over answerable questions. MRR uses the first expected source rank."
+  },
+  "generation": {
+    "status": "measured_from_saved_execution",
+    "source_file": "outputs/rag_run_qwen3b.json",
+    "cases": 78,
+    "answerable_cases": 40,
+    "unanswerable_cases": 38,
+    "model": "Qwen2.5-3B-Instruct (saved run; see source metadata)",
+    "status_counts": {
+      "insufficient_context": 42,
+      "uncited": 29,
+      "answered": 4,
+      "invalid_generation": 2,
+      "generation_unavailable": 1
+    },
+    "answerable_status_counts": {
+      "insufficient_context": 8,
+      "uncited": 27,
+      "answered": 4,
+      "invalid_generation": 1
+    },
+    "unanswerable_status_counts": {
+      "insufficient_context": 34,
+      "uncited": 2,
+      "invalid_generation": 1,
+      "generation_unavailable": 1
+    },
+    "semantic_metrics": {
+      "answer_correctness": "not_measured",
+      "faithfulness": "not_measured",
+      "citation_support": "not_measured",
+      "answer_relevancy": "not_measured",
+      "abstention_quality": "not_measured"
+    }
+  },
+  "external_validation": {
+    "evidence_source": "user-provided terminal output from the uploaded project working copy",
+    "environment": {
+      "platform": "Windows",
+      "project_path_as_reported": "D:\\Python\\Projects\\AI-Text-Classifier",
+      "virtual_environment": "venv"
+    },
+    "pytest": {
+      "command": "python -m pytest -q",
+      "result": "passed",
+      "passed": 149,
+      "failed": 0,
+      "warnings": 1,
+      "duration": "8.37s",
+      "warning": "StarletteDeprecationWarning: Using httpx with starlette.testclient is deprecated; install httpx2 instead."
+    },
+    "citation_smoke_test": {
+      "command": "python scripts/smoke_test_rag_citation.py",
+      "result": "passed",
+      "checks_passed": 7,
+      "checks_failed": 0
+    },
+    "report_generation": {
+      "command": "python scripts/build_rag_stage11_reports.py",
+      "result": "completed",
+      "interpretation": "Reconciles saved retrieval, generation, and performance artifacts; it does not run a fresh end-to-end RAG benchmark."
+    },
+    "verification_note": "These terminal results were supplied by the project operator and were not independently rerun in the report-generation environment."
+  },
+  "performance": {
+    "status": "measured_from_separate_saved_run",
+    "source_file": "outputs/rag_performance_final.json",
+    "cases": 78,
+    "average_latency_s": 3.056,
+    "p95_latency_s": 5.676,
+    "prompt_tokens_total": 110679,
+    "completion_tokens_total": 2373,
+    "provider_errors": "not_recorded_in_source",
+    "status_counts": {
+      "insufficient_context": 42,
+      "uncited": 28,
+      "answered": 6,
+      "invalid_generation": 2
+    },
+    "warning": "Performance is a separate historical run; do not combine its status counts with the generation run."
+  },
+  "limitations": [
+    "No fresh end-to-end execution was possible in this environment: faiss and sentence-transformers are unavailable and package installation is blocked by network/DNS.",
+    "Semantic generation metrics remain not_measured; lexical citation overlap is not semantic entailment.",
+    "The archived retrieval, generation, and performance results come from different runs and are reported separately.",
+    "Provider live-failure and concurrency tests require the configured local LLM/embedding services and a fully provisioned environment."
+  ]
 }

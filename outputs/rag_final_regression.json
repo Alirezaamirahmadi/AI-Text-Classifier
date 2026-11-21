@@ -1,19 +1,29 @@
 {
-  "status": "partially_verified",
-  "runner": "stub pytest runner in sandbox (not the real pytest)",
-  "pure_python_tests": {
-    "passed": 77,
+  "status": "passed_in_user_environment",
+  "evidence_source": "user-provided terminal output from the uploaded project working copy",
+  "verification_note": "These terminal results were supplied by the project operator and were not independently rerun in the report-generation environment.",
+  "environment": {
+    "platform": "Windows",
+    "project_path_as_reported": "D:\\Python\\Projects\\AI-Text-Classifier",
+    "virtual_environment": "venv"
+  },
+  "pytest": {
+    "command": "python -m pytest -q",
+    "result": "passed",
+    "passed": 149,
     "failed": 0,
-    "not_run": 2,
-    "not_run_reason": "parametrized tests need real pytest; they passed in the real run on the author's laptop before"
+    "warnings": 1,
+    "duration": "8.37s",
+    "warning": "StarletteDeprecationWarning: Using httpx with starlette.testclient is deprecated; install httpx2 instead."
   },
-  "stability_tests": {
-    "file": "tests/test_rag_stability.py",
-    "passed": 7,
-    "failed": 0
+  "citation_smoke_test": {
+    "command": "python scripts/smoke_test_rag_citation.py",
+    "result": "passed",
+    "checks_passed": 7,
+    "checks_failed": 0
   },
-  "real_pytest_on_laptop": {
-    "last_reported": "135 passed (Stage 9)"
-  },
-  "api_and_integration_tests": "not_run_in_sandbox (need fastapi/httpx and real index)"
+  "limitations": [
+    "A passing pytest suite does not establish a fresh end-to-end RAG benchmark.",
+    "Live provider, semantic answer-quality, and concurrency acceptance remain separate checks unless covered by explicit tests and evidence."
+  ]
 }

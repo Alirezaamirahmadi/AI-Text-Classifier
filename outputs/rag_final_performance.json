@@ -1,17 +1,19 @@
 {
+  "status": "measured_from_separate_saved_run",
+  "source": "outputs/rag_performance_final.json",
   "model": "qwen2.5-3b",
   "base_url": "http://127.0.0.1:8082/v1/chat/completions",
   "cases": 78,
-  "average_latency_s": 23.237,
-  "p95_latency_s": 27.169,
-  "token_usage": "not_measured",
+  "average_latency_s": 3.056,
+  "p95_latency_s": 5.676,
+  "prompt_tokens_total": 110679,
+  "completion_tokens_total": 2373,
+  "provider_errors": "not_recorded_in_source",
   "status_counts": {
-    "uncited": 26,
-    "generation_unavailable": 4,
     "insufficient_context": 42,
-    "invalid_generation": 2,
-    "answered": 4
+    "uncited": 28,
+    "answered": 6,
+    "invalid_generation": 2
   },
-  "provider_errors": 4,
-  "note": "One measured run on the author's laptop with the local 3B model. Single run, no repeats."
+  "note": "Historical performance execution; distinct from the generation result file. No new provider call was made."
 }

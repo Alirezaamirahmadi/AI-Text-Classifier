@@ -1,0 +1,29 @@
+{
+  "evidence_source": "user-provided terminal output from the uploaded project working copy",
+  "environment": {
+    "platform": "Windows",
+    "project_path_as_reported": "D:\\Python\\Projects\\AI-Text-Classifier",
+    "virtual_environment": "venv"
+  },
+  "pytest": {
+    "command": "python -m pytest -q",
+    "result": "passed",
+    "passed": 149,
+    "failed": 0,
+    "warnings": 1,
+    "duration": "8.37s",
+    "warning": "StarletteDeprecationWarning: Using httpx with starlette.testclient is deprecated; install httpx2 instead."
+  },
+  "citation_smoke_test": {
+    "command": "python scripts/smoke_test_rag_citation.py",
+    "result": "passed",
+    "checks_passed": 7,
+    "checks_failed": 0
+  },
+  "report_generation": {
+    "command": "python scripts/build_rag_stage11_reports.py",
+    "result": "completed",
+    "interpretation": "Reconciles saved retrieval, generation, and performance artifacts; it does not run a fresh end-to-end RAG benchmark."
+  },
+  "verification_note": "These terminal results were supplied by the project operator and were not independently rerun in the report-generation environment."
+}
