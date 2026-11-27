@@ -15,5 +15,7 @@ jobs:
           cache: pip
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
-      - name: Run tests
-        run: python -m pytest -q
+      - name: Run RAG tests
+        run: python -m pytest -q tests/test_rag_*.py tests/test_rag_stage12.py
+      - name: Run citation smoke test
+        run: python scripts/smoke_test_rag_citation.py
