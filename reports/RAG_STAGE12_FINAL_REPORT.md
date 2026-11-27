@@ -2,7 +2,7 @@
 
 **وضعیت نهایی: PARTIALLY_READY**
 
-**SHA آخرین Commit:** `c0694ac430749c0acf9bd638796f16e92801d83d` (Stage 11 base؛ تغییرات Stage 12 فعلاً commit نشده‌اند)
+**SHA آخرین Commit:** `6612a91b9087f784e924a3d6eb1792dbd312df90`
 
 > این گزارش فقط شامل نتایجی است که واقعاً اجرا شده‌اند. هر چیزی که اجرا نشده، صریحاً `not_measured` یا `not_run` ثبت شده است.
 
@@ -11,12 +11,12 @@
 - ساختار اعتبارسنجی Citation اصلاح شد و رفتار هر Claim جداگانه بررسی می‌شود.
 - ۲۲ تست Regression جدید در فایل فعلی دیده می‌شود. گزارش اجرای قبلی **۱۷۱ از ۱۷۱ passed** ثبت کرده است؛ اجرای مجدد در این محیط ممکن نشد و SHA گزارش‌شده همان Stage 11 است، پس این نتیجه به کد فعلی منتسب نمی‌شود.
 - ۷۸ سؤال با مدل واقعی اجرا شد. پاسخ‌های بدون Citation معتبر دیگر «تأییدشده» ارائه نمی‌شوند.
-- پنج معیار معنایی روی هر ۷۸ مورد امتیازدهی شدند؛ جزئیات، روش و نمرهٔ تک‌تک سؤال‌ها در دو فایل `outputs/rag_stage12_semantic_evaluation.json` و `outputs/rag_stage12_semantic_evaluation_assistant_review.json` است.
+- پنج معیار معنایی روی هر ۷۸ مورد امتیازدهی شدند؛ جزئیات، روش و نمرهٔ تک‌تک سؤال‌ها در دو فایل `outputs/rag_stage12_semantic_evaluation.json` و `outputs/rag_stage12_semantic_evaluation_details.json` است.
 - کیفیت مدل (۳۰ از ۴۰ سؤال پاسخ‌پذیر بدون `[Source N]`) هنوز مشکل اصلی است.
 
 ### ارزیابی معنایی (همهٔ ۷۸ پاسخ)
 
-برای بررسی متنی و فهرست‌بندی خطاها، هر ۷۸ خروجی E2E با پاسخ مرجع، required facts، متن خام مدل و Context/Citation همان اجرا مرور شد. جزئیات و امتیاز هر سؤال در `outputs/rag_stage12_semantic_evaluation_assistant_review.json` است.
+برای بررسی متنی و فهرست‌بندی خطاها، هر ۷۸ خروجی E2E با پاسخ مرجع، required facts، متن خام مدل و Context/Citation همان اجرا مرور شد. جزئیات و امتیاز هر سؤال در `outputs/rag_stage12_semantic_evaluation_details.json` است.
 
 روش امتیازدهی در JSON ثبت شده است: پاسخ با مرجع و required facts مقایسه شد؛ ادعاها با Context نهایی سنجیده شدند؛ برای Citation، متن دقیق منبع شماره‌خورده بررسی شد؛ ارتباط پاسخ با سؤال از ۰ تا ۲ امتیاز گرفت.
 
@@ -79,7 +79,7 @@ Citation به منبع ناموجود، Citation به منبع نامرتبط، 
 
 ## ۵. ارزیابی معنایی (Semantic Evaluation)
 
-فایل خلاصه: `outputs/rag_stage12_semantic_evaluation.json`. امتیاز هر سؤال و توضیح داوری: `outputs/rag_stage12_semantic_evaluation_assistant_review.json`.
+فایل خلاصه: `outputs/rag_stage12_semantic_evaluation.json`. امتیاز هر سؤال و توضیح داوری: `outputs/rag_stage12_semantic_evaluation_details.json`.
 
 روش: Answer Correctness با پاسخ مرجع و required facts سنجیده شد (`correct / partial / wrong`). Faithfulness بر اساس پشتیبانی ادعاهای پاسخ خام از Context نهایی سنجیده شد (`yes / no`). Citation Support با خواندن متن دقیق Source ارجاع‌شده ارزیابی شد (`yes / no`). Answer Relevancy از ۰ (نامرتبط/بی‌پاسخ) تا ۲ (مستقیم و مرتبط) امتیاز گرفت. برای هر ۷۸ سؤال همهٔ این برچسب‌ها ثبت شده‌اند.
 
@@ -119,7 +119,7 @@ Citation به منبع ناموجود، Citation به منبع نامرتبط، 
 
 ## ۸. اجرا نشده / محدودیت‌ها
 
-- **GitHub Actions:** workflow ساده در `.github/workflows/ci.yml` اضافه شده است؛ هنوز روی GitHub اجرا نشده و باید پس از push نتیجه‌اش بررسی شود.
+- **GitHub Actions:** اجرای اول ۱۶۴ تست موفق و ۷ تست Transformer ناموفق داشت، چون artifact محلی `models/transformer_v1` در runner موجود نیست. Workflow به تست‌های RAG و citation smoke محدود شد؛ اجرای نهایی روی SHA ثبت‌شده سبز شد.
 - **تطبیق README با کد:** به‌صورت کامل بررسی نشد. README هنوز Stage 12 و نسخه Python 3.14 را توضیح نمی‌دهد.
 - هم‌پوشانی واژگانی اثبات معنایی نیست. پاسخ غلطی که واژه‌های منبع را تکرار کند (مثلاً نفی) عبور می‌کند؛ تست `test_known_limit_*` این را مستند می‌کند. `semantic_entailment_verified` همیشه `False` است.
 - `split_claims` یک Heuristic است و ممکن است مخفف‌ها را اشتباه جدا کند.
@@ -133,6 +133,8 @@ Citation به منبع ناموجود، Citation به منبع نامرتبط، 
 2. ۴ سؤال پاسخ‌پذیر اشتباهاً با `insufficient_context` رد شدند.
 3. اجرای تازهٔ E2E روی تغییرات فعلی لازم است؛ خروجی ثبت‌شده به SHA Stage 11 منتسب است.
 
+- نتیجهٔ GitHub Actions: **سبز** روی commit 6612a91b9087f784e924a3d6eb1792dbd312df90.
+
 ## ۱۰. وضعیت پذیرش: PARTIALLY_READY
 
-دلایل: CI هنوز از GitHub اجرا نشده، اجرای تست/E2E فعلی به SHA تغییرات منتسب نیست، و ۳۴/۴۰ سؤال پاسخ‌پذیر به پاسخ نهاییِ قابل‌قبول نرسیدند. نتیجهٔ ارزیابی معنایی و روش آن در فایل‌های خروجی ثبت شده‌اند. برای READY_FOR_ACCEPTANCE لازم است اجرای تست/E2E روی commit نهایی و CI سبز بررسی شود.
+دلایل: اجرای E2E ذخیره‌شده هنوز به SHA تغییرات منتسب نیست و ۳۴/۴۰ سؤال پاسخ‌پذیر به پاسخ نهاییِ قابل‌قبول نرسیدند. نتیجهٔ ارزیابی معنایی و روش آن در فایل‌های خروجی ثبت شده‌اند. برای READY_FOR_ACCEPTANCE لازم است اجرای تست/E2E روی commit نهایی و CI سبز بررسی شود.
