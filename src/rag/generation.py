@@ -1,6 +1,7 @@
 """Generate concise answers from retrieved context through OpenRouter or a local OpenAI-compatible server."""
 
 import os
+import threading
 from typing import Any
 
 import httpx
@@ -16,6 +17,20 @@ class GenerationError(RuntimeError):
 
 # آخرین مقدار usage که سرویس مدل برگردانده (برای اندازه‌گیری توکن).
 LAST_USAGE = {}
+# مقدار usage هر Thread جداگانه نگه داشته می‌شود تا در اجرای هم‌زمان با درخواست دیگر قاطی نشود.
+# LAST_USAGE فقط برای سازگاری با کد/تست قبلی باقی مانده و در اجرای هم‌زمان قابل اتکا نیست.
+_thread_usage = threading.local()
+
+
+def _redact(text: str) -> str:
+    """Remove the API key from text that may be echoed back by the provider."""
+    key = os.getenv("OPENROUTER_API_KEY")
+    return text.replace(key, "***") if key else text
+
+
+def get_last_usage() -> dict:
+    """Token usage of the most recent generation made by the *current thread*."""
+    return dict(getattr(_thread_usage, "usage", {}) or {})
 
 
 def generate_answer(
@@ -64,6 +79,8 @@ Keep the answer concise, with citations next to supported claims.
     "Do not include analysis, reasoning, notes, or a list of steps. "
     "Every factual claim must cite an excerpt using exactly [Source 1], "
     "[Source 2], etc. Use only source labels present in the excerpts. "
+    "Citation style example (a topic unrelated to the documents, never reuse it): "
+    "'Tea should steep for three minutes [Source 1].' "
     "If the excerpts do not directly support an answer, reply exactly: "
     "'The provided documents do not contain enough information to answer this question.'"
 )
@@ -86,15 +103,17 @@ Keep the answer concise, with citations next to supported claims.
         )
         response.raise_for_status()
         payload: dict[str, Any] = response.json()
+        usage = payload.get("usage") or {}
+        _thread_usage.usage = dict(usage)
         LAST_USAGE.clear()
-        LAST_USAGE.update(payload.get("usage") or {})
+        LAST_USAGE.update(usage)
 
         # پاسخ استاندارد سرویس باید دست‌کم یک گزینه تولیدشده داشته باشد.
         choices = payload.get("choices") or []
         if not choices:
             error_info = payload.get("error", {})
             raise GenerationError(
-                f"Provider returned no choices: {str(error_info)[:300]}"
+                f"Provider returned no choices: {_redact(str(error_info))[:300]}"
             )
 
         choice = choices[0]
@@ -113,7 +132,7 @@ Keep the answer concise, with citations next to supported claims.
             finish_reason = choice.get("finish_reason")
             refusal = message.get("refusal")
             raise GenerationError(
-                f"Empty answer; finish_reason={finish_reason}; refusal={refusal!r}"
+                f"Empty answer; finish_reason={finish_reason}; refusal={_redact(repr(refusal))}"
             )
 
         return answer.strip()

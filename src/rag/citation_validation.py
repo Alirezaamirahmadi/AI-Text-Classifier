@@ -25,7 +25,13 @@ def extract_source_numbers(text):
     return numbers
 
 _WORDS = re.compile(r"[A-Za-z][A-Za-z0-9_'-]{2,}")
-_SENTENCE_SPLIT = re.compile(r"(?<=[.!?])\s+(?=[A-Z0-9\"'])")
+# پایان جمله: نقطه/علامت سؤال/تعجب، به‌همراه ارجاع‌هایی که ممکن است بعد از آن بیایند.
+# مثال: "... models. [Source 1] Next claim." باید دو Claim شود.
+_CITATION_TAIL = r"(?:\s*\[(?:\s*Source\s+\d+\s*,?)+\])*"
+_SENTENCE = re.compile(
+    r".+?(?:[.!?]" + _CITATION_TAIL + r")(?=\s+[A-Z0-9\"']|\s*$)",
+    re.DOTALL | re.IGNORECASE,
+)
 
 
 # پاسخ را به ادعاهای جداگانه تقسیم می‌کند تا هر ادعا مستقل بررسی شود.
@@ -33,8 +39,13 @@ def split_claims(answer: str) -> list[str]:
     """Split a response into sentence-like claims without claiming perfect NLP."""
     if not isinstance(answer, str) or not answer.strip():
         return []
-    pieces = _SENTENCE_SPLIT.split(answer.strip())
-    return [piece.strip() for piece in pieces if piece.strip()]
+    text = answer.strip()
+    pieces = [m.group(0).strip() for m in _SENTENCE.finditer(text)]
+    # هر متنی که بعد از آخرین جمله مانده (مثلاً جمله بدون نقطه پایانی) هم یک Claim است.
+    end = max((m.end() for m in _SENTENCE.finditer(text)), default=0)
+    if text[end:].strip():
+        pieces.append(text[end:].strip())
+    return pieces
 
 
 # واژه‌های قابل مقایسه را برای سنجش هم‌پوشانی متنی استخراج می‌کند.

@@ -5,6 +5,7 @@ pycache/
 .venv/
 venv/
 env/
+work/
 
 # IDE
 .vscode/
@@ -24,3 +25,5 @@ data/rag_test_index/
 # Local evaluation outputs (keep source queries tracked)
 data/rag_evaluation/*
 !data/rag_evaluation/queries.json
+.env
+__pycache__/

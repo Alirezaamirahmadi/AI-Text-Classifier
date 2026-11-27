@@ -1,0 +1,149 @@
+{
+  "generated_at_utc": "2026-11-27T17:51:30.291626+00:00",
+  "git_head": "c0694ac430749c0acf9bd638796f16e92801d83d",
+  "python": "3.14.10",
+  "full_suite": {
+    "total": 171,
+    "passed": 171,
+    "failed": 0,
+    "pytest_exit_code": 0,
+    "last_line": [
+      "171 passed, 2 warnings in 7.26s"
+    ]
+  },
+  "stage12_tests": [
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_valid_supported_citation_is_answered",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_citation_to_nonexistent_source_is_rejected",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_citation_to_unrelated_source_is_unverified",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_multi_claim_one_uncited_is_withheld",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_multi_claim_each_checked_separately",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_multi_claim_all_supported_is_answered",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_answer_without_citation_is_withheld",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_unanswerable_question_abstains",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_context_dump_is_rejected",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_empty_or_incomplete_answer_is_rejected",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_provider_timeout_is_handled",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_prompt_injection_in_document_cannot_inflate_source_count",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_citation_to_source_cut_by_context_limit_is_invalid",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_source_numbers_match_final_context_after_dedup",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_concurrent_requests_do_not_mix_results",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_known_limit_wrong_answer_with_high_overlap_still_passes",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_usage_is_kept_per_thread",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_trace_receives_context_and_raw_generation",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_provider_errors_do_not_leak_api_key",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_provider_error_body_echoing_key_is_redacted",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_answer_question_result_never_contains_api_key",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_prompt_citation_example_is_not_copyable_document_content",
+      "result": "passed"
+    }
+  ],
+  "ci": "not_run_locally (check GitHub Actions after push)",
+  "local_windows_rerun": {
+    "evidence_source": "User-provided terminal output from D:/Python/Projects/AI-Text-Classifier with venv-clean active",
+    "python": "3.14.10 (per prior captured environment in this project; user output did not print python --version)",
+    "pytest": {
+      "command": "python -m pytest -q",
+      "result": "passed",
+      "passed": 171,
+      "failed": 0,
+      "warnings": [
+        "StarletteDeprecationWarning: httpx with starlette.testclient is deprecated; install httpx2 instead.",
+        "PytestCacheWarning: Windows cache path creation warning (WinError 183); tests completed successfully."
+      ],
+      "duration_s": 8.8
+    },
+    "citation_smoke_test": {
+      "command": "python scripts\\smoke_test_rag_citation.py",
+      "result": "passed",
+      "checks_passed": 7,
+      "checks_failed": 0
+    },
+    "git_head_at_run": "not_provided; run predates or does not identify the final commit SHA"
+  }
+}

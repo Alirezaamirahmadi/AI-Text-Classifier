@@ -1,0 +1,117 @@
+{
+  "generated_at_utc": "2026-11-27T17:51:30.291626+00:00",
+  "method": "Deterministic lexical checks; NOT semantic entailment.",
+  "scenario_tests": [
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_valid_supported_citation_is_answered",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_citation_to_nonexistent_source_is_rejected",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_citation_to_unrelated_source_is_unverified",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_multi_claim_one_uncited_is_withheld",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_multi_claim_each_checked_separately",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_multi_claim_all_supported_is_answered",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_answer_without_citation_is_withheld",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_unanswerable_question_abstains",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_context_dump_is_rejected",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_empty_or_incomplete_answer_is_rejected",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_provider_timeout_is_handled",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_prompt_injection_in_document_cannot_inflate_source_count",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_citation_to_source_cut_by_context_limit_is_invalid",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_source_numbers_match_final_context_after_dedup",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_concurrent_requests_do_not_mix_results",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_known_limit_wrong_answer_with_high_overlap_still_passes",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_usage_is_kept_per_thread",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_trace_receives_context_and_raw_generation",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_provider_errors_do_not_leak_api_key",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_provider_error_body_echoing_key_is_redacted",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_answer_question_result_never_contains_api_key",
+      "result": "passed"
+    },
+    {
+      "module": "tests.test_rag_stage12",
+      "test": "test_prompt_citation_example_is_not_copyable_document_content",
+      "result": "passed"
+    }
+  ],
+  "known_limitation": "A wrong claim that reuses words from the cited chunk still passes (test_known_limit_*)."
+}

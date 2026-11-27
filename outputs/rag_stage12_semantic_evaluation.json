@@ -1,0 +1,59 @@
+{
+  "status": "exploratory_review_recorded",
+  "answer_model": {
+    "LLM_BASE_URL": "http://127.0.0.1:8081/v1/chat/completions",
+    "LLM_MODEL": "qwen2.5-3b-instruct"
+  },
+  "review_method": "Each raw answer compared to the question, reference answer, required facts, final retrieved context, and exact cited excerpts.",
+  "reviewer": "assistant review",
+  "metrics": {
+    "answer_correctness": {
+      "scale": "correct / partial / wrong; exact-match meaning checked against reference and required facts",
+      "distribution": {
+        "partial": 33,
+        "wrong": 11,
+        "correct": 34
+      },
+      "n": 78
+    },
+    "faithfulness": {
+      "scale": "yes/no; raw answer factual claims compared with final retrieved context",
+      "distribution": {
+        "yes": 66,
+        "no": 12
+      },
+      "n": 78
+    },
+    "citation_support": {
+      "scale": "yes/no; cited source checked against each cited claim; abstention/no citation counted no",
+      "distribution": {
+        "no": 43,
+        "yes": 35
+      },
+      "n": 78
+    },
+    "answer_relevancy": {
+      "scale": "0-2; 0=irrelevant/no answer, 1=partly relevant, 2=directly relevant",
+      "distribution": {
+        "0": 37,
+        "1": 6,
+        "2": 35
+      },
+      "mean": 0.9744,
+      "n": 78
+    },
+    "abstention_quality": {
+      "method": "dataset answerable label vs final status; correct abstention means insufficient_context for unanswerable case; wrong abstention means insufficient_context for answerable case",
+      "unanswerable_total": 38,
+      "correct_abstentions": 32,
+      "correct_abstention_rate": 0.8421,
+      "unanswerable_answered": 3,
+      "unanswerable_uncited_withheld": 3,
+      "answerable_total": 40,
+      "answerable_insufficient_context": 4,
+      "wrong_abstention_rate": 0.1
+    }
+  },
+  "per_question_file": "outputs/rag_stage12_semantic_evaluation_assistant_review.json",
+  "acceptance_note": "Use as answer review evidence; human sign-off can be added by reviewer. No unreviewed run data is combined."
+}

@@ -1,0 +1,14 @@
+{
+  "status": "measured",
+  "model": {
+    "LLM_BASE_URL": "http://127.0.0.1:8081/v1/chat/completions",
+    "LLM_MODEL": "qwen2.5-3b-instruct"
+  },
+  "total": 78,
+  "avg_latency_s": 19.887,
+  "p95_latency_s": 24.122,
+  "max_latency_s": 27.349,
+  "questions_with_token_usage": 78,
+  "total_tokens": 115152,
+  "concurrency": "sequential run; concurrency covered by unit tests with mocks only"
+}
